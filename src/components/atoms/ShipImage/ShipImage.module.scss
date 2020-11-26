@@ -1,0 +1,12 @@
+.shipImage {
+  width: 101px;
+  height: 109px;
+  &.isBig {
+    width: 353px;
+    height: auto;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

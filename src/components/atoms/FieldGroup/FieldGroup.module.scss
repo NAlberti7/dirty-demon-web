@@ -1,0 +1,21 @@
+@import "../../../utils/media.scss";
+
+.fieldGroup {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  @include respond(phone) {
+    margin-bottom: 0;
+    flex-direction: column;
+  }
+  div {
+    &:first-of-type {
+      margin-right: 25px;
+      @include respond(phone) {
+        margin-right: 0;
+      }
+    }
+  }
+}

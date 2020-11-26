@@ -1,0 +1,69 @@
+.parallax {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &_item {
+    position: absolute;
+    z-index: -1;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &.0 {
+      width: 356px;
+      left: 0;
+    }
+    &.1 {
+      width: 426px;
+      right: 0;
+    }
+    &.2 {
+      width: 426px;
+      left: 0;
+    }
+    &.3 {
+      width: 400px;
+      right: 0;
+    }
+    &.4 {
+      width: 450px;
+      left: 0;
+    }
+    &.5 {
+      width: 345px;
+      right: 144px;
+    }
+    &.6 {
+      width: 345px;
+      left: 162px;
+    }
+    &.7 {
+      width: 325px;
+      right: 328px;
+    }
+  }
+}
+// .test {
+//   width: 356px;
+// }
+
+@keyframes animation2 {
+  0% {
+    transform: translateY(105vh);
+    visibility: hidden;
+  }
+  100% {
+    transform: translateY(-105vh);
+    visibility: visible;
+  }
+}

@@ -1,0 +1,20 @@
+.previewContainer {
+  display: flex;
+  width: fit-content;
+  opacity: 0.3;
+  position: absolute;
+  top: 50px;
+  right: -200px;
+  &:hover {
+    opacity: 1;
+  }
+  &.isPreviewActive {
+    top: 50px;
+    right: -200px;
+  }
+  div {
+    &:first-of-type {
+      margin-right: 20px;
+    }
+  }
+}

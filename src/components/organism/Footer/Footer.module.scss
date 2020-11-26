@@ -1,0 +1,18 @@
+@import "../../../utils/media.scss";
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 36px 0;
+  &.fromHome {
+    position: absolute;
+    bottom: 87px;
+    padding: 0;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+}

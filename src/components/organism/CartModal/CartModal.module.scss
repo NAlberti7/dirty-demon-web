@@ -1,0 +1,101 @@
+@import "../../../utils/media.scss";
+.cartModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 30000;
+  background-color: var(--main-orange);
+  max-width: 607px;
+  padding: 24px 0;
+  @include respond(phone) {
+    width: 90%;
+  }
+  &Overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 20000;
+    background: rgba(#0000, 0.9);
+    top: 0;
+    left: 0;
+  }
+  &_header {
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(#0000, 0.3);
+    @include respond(phone) {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    &.fromCheckout {
+      padding: 20px 40px;
+      @include respond(phone) {
+        border-bottom: 1px solid rgba(#0000, 0.3);
+      }
+      h2 {
+        &:first-of-type {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  &_main {
+    padding-top: 24px;
+    &Container {
+      margin-top: 14px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 250px;
+      overflow-y: scroll;
+      flex-direction: column;
+      @include respond(phone) {
+        overflow: auto;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch !important;
+        height: 100%;
+        min-height: 250px;
+        max-height: 350px;
+      }
+    }
+  }
+  &_footer {
+    border-top: 1px solid rgba(#0000, 0.3);
+    padding-top: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @include respond(phone) {
+      flex-direction: column;
+      padding-top: 0;
+      button {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 90%;
+        height: 44px;
+        span {
+          font-size: 18px !important;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  h4 {
+    margin: 10px 0;
+  }
+}
+
+.mobileContinue {
+  width: 100%;
+  max-width: 90%;
+  height: 44px;
+  border: none;
+  margin: 10px 0 0 0 !important;
+  span {
+    font-size: 18px !important;
+    margin-top: 2px;
+  }
+}

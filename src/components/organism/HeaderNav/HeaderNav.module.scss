@@ -1,0 +1,43 @@
+@import "../../../utils/media.scss";
+
+.headerNav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  // padding: 0 0 34px 0;
+  z-index: 10000;
+  transition: top, left 300ms ease-in-out;
+
+  &.scrolled {
+    border-bottom: 1px solid var(--main-border);
+    background-color: black;
+  }
+  &.fromHome {
+    top: 32vh;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    padding: 69px 0 34px 0;
+    &.fromHome {
+      padding: 0;
+    }
+    @include respond(phone) {
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px 10px 40px;
+    }
+  }
+}

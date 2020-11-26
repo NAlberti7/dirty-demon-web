@@ -1,0 +1,20 @@
+.contact {
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  h2 {
+    margin-bottom: 15px;
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+    span {
+      color: var(--main-orange);
+    }
+  }
+  .datos {
+    padding: 5px 10px;
+    background-color: var(--main-orange);
+    max-width: 250px;
+    margin-bottom: 15px;
+  }
+}

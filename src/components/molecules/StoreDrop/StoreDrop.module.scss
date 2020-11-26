@@ -1,0 +1,15 @@
+.storeDrop {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_title {
+  }
+  &_drop {
+    background: none;
+    fill: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}

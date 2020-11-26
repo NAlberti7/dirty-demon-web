@@ -1,0 +1,38 @@
+@import "../../../utils/media.scss";
+.dirtyMainInfo {
+  width: fit-content;
+  margin-bottom: 44px;
+  @include respond(phone) {
+    margin-bottom: 21px;
+  }
+  &_textContainer {
+    cursor: pointer;
+  }
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin 300ms ease-in-out;
+    position: relative;
+    a {
+      margin-right: 5px;
+      cursor: pointer;
+      &:last-of-type {
+        margin-right: none;
+      }
+    }
+    .cross {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    h2 {
+      &.margin {
+        margin-right: 44px;
+        @include respond(phone) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

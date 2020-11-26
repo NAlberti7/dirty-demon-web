@@ -1,0 +1,26 @@
+.mobileItemBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  &_button {
+    background: none;
+    width: fit-content;
+    padding: 0;
+    &:disabled {
+      background: none;
+      width: fit-content;
+      padding: 0;
+      border: none;
+      span {
+        font-size: 14px !important;
+        color: var(--main-orange) !important;
+      }
+    }
+    span {
+      font-size: 14px !important;
+      color: var(--main-orange) !important;
+    }
+  }
+}

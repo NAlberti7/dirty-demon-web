@@ -1,0 +1,49 @@
+@import "../../../utils/media.scss";
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--main-orange);
+  position: relative;
+  width: 43px;
+  height: 45px;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  &.hasCartItems {
+    svg {
+      transition: all 200ms ease-in-out;
+      * {
+        fill: var(--main-orange);
+      }
+    }
+  }
+  @include respond(desktop) {
+    right: 40px;
+  }
+  svg {
+    width: 22.5;
+  }
+  &.fromHome {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &_number {
+    position: absolute;
+    margin-top: 5px;
+    font-size: 10px;
+    @include respond(phone) {
+      color: var(--main-orange);
+    }
+  }
+  @include respond(phone) {
+    position: relative;
+    bottom: initial;
+    right: initial;
+    background-color: transparent;
+    width: fit-content;
+    height: auto;
+  }
+}

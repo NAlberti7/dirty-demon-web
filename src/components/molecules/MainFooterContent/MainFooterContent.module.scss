@@ -1,0 +1,28 @@
+.mainFooterContent {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  position: relative;
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.fromHome {
+      margin-bottom: 22px;
+    }
+    .cross {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    h2 {
+      &.margin {
+        margin-right: 44px;
+      }
+    }
+  }
+}

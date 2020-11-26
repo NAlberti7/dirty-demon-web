@@ -1,0 +1,13 @@
+@import "../../../utils/media.scss";
+.checkoutTitles {
+  margin-bottom: 16px;
+  @include respond(phone) {
+    h2,
+    h3 {
+      text-align: center !important;
+    }
+    h2 {
+      margin-bottom: 5px;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import "../../../utils/media.scss";
+
+.parallax {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 1440px;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  &_item {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &.0 {
+      width: 426px;
+      margin-left: 196px;
+      @include respond(phone) {
+        width: 228px;
+        margin-left: -80px;
+      }
+    }
+    &.1 {
+      width: 426px;
+      align-self: flex-end;
+      margin-top: -150px;
+      margin-right: 168px;
+      @include respond(phone) {
+        width: 226px;
+        margin-top: -40px;
+        margin-right: -120px;
+      }
+    }
+    &.2 {
+      width: 426px;
+      margin-top: -250px;
+      margin-left: 157;
+      @include respond(phone) {
+        width: 226px;
+        margin-top: -65px;
+        margin-left: -100px;
+      }
+    }
+    &.3 {
+      width: 400px;
+      align-self: flex-end;
+      margin-top: -50px;
+      margin-right: 112px;
+      @include respond(phone) {
+        width: 173px;
+        margin-top: -13px;
+        margin-left: 0;
+        margin-right: -100px;
+      }
+    }
+    &.4 {
+      width: 450px;
+      margin-top: -250px;
+      margin-left: 252px;
+      @include respond(phone) {
+        width: 241px;
+        margin-top: -65px;
+        margin-left: -50px;
+      }
+    }
+    &.5 {
+      width: 345px;
+      align-self: flex-end;
+      margin-top: 0px;
+      margin-right: 114px;
+      @include respond(phone) {
+        width: 173px;
+        margin-right: -50px;
+        margin-left: 0;
+      }
+    }
+    &.6 {
+      width: 345px;
+      margin-top: -350px;
+      margin-left: 162px;
+      @include respond(phone) {
+        width: 184px;
+        margin-top: -91px;
+        margin-left: -65px;
+      }
+    }
+    &.7 {
+      width: 325px;
+      align-self: flex-end;
+      margin-top: 150px;
+      margin-right: 328px;
+      @include respond(phone) {
+        width: 133px;
+        margin-top: 49px;
+        margin-right: -20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../utils/media.scss";
+.more {
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  @include respond(phone) {
+    padding-top: 120px;
+  }
+  .question {
+    margin-bottom: 30px;
+  }
+  &_article {
+    margin-bottom: 100px;
+    &Max {
+      max-width: 511px;
+    }
+  }
+  li {
+    padding-left: 5em;
+    margin-bottom: 15px;
+  }
+  span {
+    color: var(--main-orange);
+  }
+  &_safety {
+    margin-bottom: 15px;
+  }
+}
+
+.safety {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-right: 30px;
+  }
+}

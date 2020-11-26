@@ -1,0 +1,31 @@
+.dot {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
+  border: solid 3px var(--main-white);
+  background-color: transparent;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  margin-right: 7px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+  &.selected {
+    opacity: 1;
+    border-color: var(--main-orange);
+    span {
+      color: var(--main-orange);
+    }
+  }
+  &.white {
+    background-color: var(--main-white);
+    border-color: var(--main-white);
+    span {
+      color: var(--main-black);
+    }
+  }
+}

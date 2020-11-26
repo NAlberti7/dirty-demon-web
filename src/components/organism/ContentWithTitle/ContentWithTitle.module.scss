@@ -1,0 +1,27 @@
+@import "../../../utils/media.scss";
+
+.content {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  @include respond(phone) {
+    flex-direction: column;
+    padding: 0 34px;
+  }
+  &_title {
+    width: 284px;
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+  &_children {
+    width: 560px;
+
+    margin: 0 auto;
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+}

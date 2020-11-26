@@ -1,0 +1,12 @@
+.shopButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 44px;
+  border: 1px solid var(--main-orange);
+  transition: all 300ms ease-in-out;
+  &:hover {
+    border-width: 2px;
+  }
+}

@@ -1,0 +1,44 @@
+@import "../../../utils/media.scss";
+.cartItem {
+  width: 100%;
+  max-width: 531px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  border: 1px solid rgba(#0000, 0.3);
+  margin-bottom: 18px;
+  @include respond(phone) {
+    border: none;
+    padding: 0px 18px;
+  }
+  &_image {
+    width: 101px;
+    height: 109px;
+    img {
+      height: 100%;
+    }
+  }
+  &_info {
+    padding-left: 18px;
+    text-align: left;
+  }
+  &_close {
+    position: absolute !important;
+    top: 18px;
+    right: 18px;
+  }
+  &_quantity {
+    display: flex;
+    margin: 10px 0;
+    &Container {
+      width: 38px;
+      height: 19px;
+      border: 1px solid rgba(#0000, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

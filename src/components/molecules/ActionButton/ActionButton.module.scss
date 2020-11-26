@@ -1,0 +1,21 @@
+.actionButton {
+  width: 21px;
+  height: 21px;
+  background: var(--main-black);
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  span {
+    height: 25px;
+  }
+
+  &.close {
+    span {
+      transform: rotate(45deg);
+    }
+  }
+}

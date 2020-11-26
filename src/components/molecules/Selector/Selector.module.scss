@@ -1,0 +1,16 @@
+.selector {
+  width: fit-content;
+  &:last-of-type {
+    margin-left: 24px;
+  }
+  h4 {
+    text-align: left;
+  }
+  &_container {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+}

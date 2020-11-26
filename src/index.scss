@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url("./assets/fonts/HelveticaNeue.ttf") format("truetype"); /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: "HelveticaLTS";
+  src: url("./assets/fonts/HelveticaNeueLTS.ttf") format("truetype"); /* Pretty Modern Browsers */
+}
+:root {
+  --main-orange: #ff5719;
+  --main-black: #000;
+  --main-white: #fff;
+  --main-border: #70707040;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "HelveticaLTS", sans-serif;
+  background-color: var(--main-black);
+}
+
+a {
+  text-decoration: none;
+}
+
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// textarea:-webkit-autofill,
+// textarea:-webkit-autofill:hover,
+// textarea:-webkit-autofill:focus,
+// select:-webkit-autofill,
+// select:-webkit-autofill:hover,
+// select:-webkit-autofill:focus {
+//   // border: 1px solid green;
+//   // -webkit-text-fill-color: green;
+//   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+//   background-color: transparent !important;
+//   color: var(--main-orange) !important;
+//   transition: background-color 5000s ease-in-out 0s;
+// }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px black inset;
+  -webkit-text-fill-color: white;
+}

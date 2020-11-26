@@ -1,0 +1,21 @@
+@import "../../../utils/media.scss";
+.navLink {
+  font-size: 15px;
+  text-align: center;
+  color: var(--main-white);
+  font-family: "HelveticaLTS", "sans-serif";
+  opacity: 0.3;
+  transition: all 100ms ease-in-out;
+  @include respond(phone) {
+    font-size: 20px;
+    opacity: 1;
+    margin-bottom: 10px;
+  }
+  &.fromHome {
+    opacity: 1;
+  }
+  &.isActive {
+    color: var(--main-orange);
+    opacity: 1;
+  }
+}

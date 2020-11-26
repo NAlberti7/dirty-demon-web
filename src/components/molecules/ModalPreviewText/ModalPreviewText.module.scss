@@ -1,0 +1,16 @@
+.modalPreviewText {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 4000;
+  .stroke {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    pointer-events: none;
+  }
+  &_container {
+  }
+}

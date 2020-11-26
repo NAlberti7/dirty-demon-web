@@ -1,0 +1,14 @@
+.itemInfo {
+  width: 100%;
+  &_container {
+    text-align: left;
+    margin-bottom: 15px;
+    p,
+    span {
+      text-align: left;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

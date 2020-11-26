@@ -1,0 +1,16 @@
+@import "../../../utils/media.scss";
+
+.storeSection {
+  width: 100%;
+  border-bottom: 1px solid var(--main-border);
+  padding: 20px 0;
+  &_hoodies {
+    display: flex;
+    justify-content: space-between;
+    @include respond(phone) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

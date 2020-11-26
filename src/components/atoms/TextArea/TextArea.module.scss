@@ -1,0 +1,19 @@
+.textarea {
+  width: 100%;
+  border: 1px solid var(--main-white);
+  font-family: "Helvetica", "sans-serif";
+  color: var(--main-white);
+  padding: 5px 0 5px 15px;
+  text-align: left;
+  font-size: 15px;
+  background: transparent;
+  outline: none;
+  resize: none;
+  height: 90px;
+  &::placeholder {
+    color: rgba($color: #ffff, $alpha: 0.4);
+  }
+  &.invalid {
+    border-color: var(--main-orange);
+  }
+}

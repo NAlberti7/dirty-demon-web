@@ -1,0 +1,34 @@
+.TextPrimary {
+  font-size: 76px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: center;
+  color: var(--main-white);
+  transition: font-size 300ms;
+  &.bold {
+    font-weight: bold;
+  }
+  &.semibold {
+    font-weight: 600;
+  }
+  &.regular {
+    font-weight: 400;
+  }
+  &.light {
+    font-weight: 300;
+  }
+
+  &.primary {
+    font-family: "HelveticaLTS", "sans-serif";
+  }
+  &.secondary {
+    font-family: "Helvetica", "sans-serif";
+  }
+  &.orange {
+    color: var(--main-orange);
+  }
+  &.black {
+    color: var(--main-black);
+  }
+}

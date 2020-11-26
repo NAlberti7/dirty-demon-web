@@ -1,0 +1,185 @@
+export const ITEM = {
+  name: "Remera DEMONS",
+  price: 200,
+  stock: [
+    { size: "S", stock: 5 },
+    { size: "M", stock: 10 },
+    { size: "L", stock: 15 },
+    { size: "XL", stock: 0 },
+  ],
+  tags: ["remera", "oversized"],
+  category: "remeras",
+  color: "negro",
+  description: "Remera Negra molderia oversized T-shirt (Dirty Demon ™)",
+  itemPicture: {
+    front: "https://cdn.palmangels.com/images/157769/large_PMAB002R204130260188_01.jpg?1566995743",
+    back: "https://cdn.palmangels.com/images/157770/large_PMAB002R204130260188_02.jpg?1566995749",
+  },
+  itemId: 1,
+};
+
+export const ITEMLIST = [
+  {
+    name: "REMERA DEMONS NEGRA",
+    price: 1250,
+    stock: [
+      { size: "S", stock: 10 },
+      { size: "M", stock: 11 },
+      { size: "L", stock: 9 },
+      { size: "XL", stock: 3 },
+    ],
+    tags: ["remera", "oversized"],
+    category: "remeras",
+    color: "negro",
+    description: "Remera Negra molderia oversized T-shirt (Dirty Demon ™)",
+    itemPicture: {
+      front: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160167/Remera_Demons_Frente_Negra_tscypu.png",
+      back: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160202/Remera_Demons_Espalda_Negra_uw11o2.png",
+    },
+    itemId: 1,
+  },
+  {
+    name: "REMERA TRAVIS BLANCA",
+    price: 1250,
+    stock: [
+      { size: "S", stock: 5 },
+      { size: "M", stock: 10 },
+      { size: "L", stock: 0 },
+      { size: "XL", stock: 10 },
+    ],
+    tags: ["remera", "oversized"],
+    category: "remeras",
+    color: "blanca",
+    description: "Remera Blanca molderia oversized T-shirt (Dirty Demon ™)",
+    itemPicture: {
+      front: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160200/Remera_Travis_Frente_Blanca_brjgef.png",
+      back: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160218/Remera_Travis_Espalda_uulggu.png",
+    },
+    itemId: 2,
+  },
+  {
+    name: "REMERA HELL ROSE OLIVA",
+    price: 1250,
+    stock: [
+      { size: "s", stock: 18 },
+      { size: "m", stock: 22 },
+      { size: "l", stock: 21 },
+      { size: "xl", stock: 10 },
+    ],
+    tags: ["remera", "oversized"],
+    category: "remeras",
+    color: "oliva",
+    description: "Remera Oliva molderia oversized T-shirt (Dirty Demon ™)",
+    itemPicture: {
+      front: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160176/Remera_Hell_Frente_Oliva_nbyvh4.png",
+      back: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160240/Remera_Hell_Espalda_obneiq.png",
+    },
+    itemId: 3,
+  },
+  {
+    name: "REMERA DEMONS BLANCA",
+    price: 1250,
+    stock: [
+      { size: "s", stock: 20 },
+      { size: "m", stock: 18 },
+      { size: "l", stock: 19 },
+      { size: "xl", stock: 11 },
+    ],
+    tags: ["remera", "oversized"],
+    category: "remeras",
+    color: "blanco",
+    description: "Remera Blanca molderia oversized T-shirt (Dirty Demon ™)",
+    itemPicture: {
+      front: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160174/Remera_Demons_Frente_j0sn6f.png",
+      back: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160188/Remera_Demons_Espalda_qpox6a.png ",
+    },
+    itemId: 4,
+  },
+  {
+    name: "REMERA TRAVIS NEGRA",
+    price: 1250,
+    stock: [
+      { size: "s", stock: 7 },
+      { size: "m", stock: 10 },
+      { size: "l", stock: 10 },
+      { size: "xl", stock: 3 },
+    ],
+    tags: ["remera", "oversized"],
+    category: "remeras",
+    color: "negro",
+    description: "Remera Negra molderia oversized T-shirt (Dirty Demon ™)",
+    itemPicture: {
+      front: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160201/Remera_Travis_Frente_ahniin.png",
+      back: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160210/Remera_Travis_Espalda_Negra_dcjz4a.png",
+    },
+    itemId: 5,
+  },
+  {
+    name: "REMERA DEMONS NEGRA",
+    price: 1250,
+    stock: [
+      { size: "S", stock: 5 },
+      { size: "M", stock: 10 },
+      { size: "L", stock: 15 },
+      { size: "XL", stock: 0 },
+    ],
+    tags: ["remera", "oversized"],
+    category: "remeras",
+    color: "blanco",
+    description: "Remera Negra molderia oversized T-shirt (Dirty Demon ™)",
+    itemPicture: {
+      front: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160167/Remera_Demons_Frente_Negra_tscypu.png",
+      back: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160202/Remera_Demons_Espalda_Negra_uw11o2.png",
+    },
+    itemId: 6,
+  },
+  {
+    name: "REMERA HELL ROSE BLANCA",
+    price: 1250,
+    stock: [
+      { size: "S", stock: 0 },
+      { size: "M", stock: 0 },
+      { size: "L", stock: 0 },
+      { size: "XL", stock: 0 },
+    ],
+    tags: ["remera", "oversized"],
+    category: "remeras",
+    color: "blanco",
+    description: "Remera Blanca molderia oversized T-shirt (Dirty Demon ™)",
+    itemPicture: {
+      front: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160183/Remera_Hell_Frente_NE_uofr67.png",
+      back: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160244/Remera_Hell_Espalda_NE__kumtc7.png",
+    },
+    itemId: 7,
+  },
+  {
+    name: "BUZO DIRTY DEMON NEGRO",
+    price: 2200,
+    stock: [
+      { size: "s", stock: 6 },
+      { size: "m", stock: 12 },
+      { size: "l", stock: 15 },
+      { size: "xl", stock: 6 },
+    ],
+    tags: ["buzo", "oversized"],
+    category: "buzo",
+    color: "negro",
+    description: "Buzo Negro molderia oversized Hoddie (Dirty Demon ™)",
+    itemPicture: {
+      front: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160209/Buzo_Frente_vckb91.png",
+      back: "https://res.cloudinary.com/dvmll0ruo/image/upload/c_scale,w_1200/v1582160213/Buzo_Negro_cmw9xn.png",
+    },
+    itemId: 8,
+  },
+];
+
+export const CLOTHING_GROUPID = {
+  DEMONS: [
+    { _id: "5e55caf3885859009834a165", color: "negro" },
+    { _id: "5e55cbea885859009834a16f", color: "blanco" },
+  ],
+  TRAVIS: [
+    { _id: "5e55cc31885859009834a174", color: "negro" },
+    { _id: "5e55cb62885859009834a16a", color: "blanco" },
+  ],
+};

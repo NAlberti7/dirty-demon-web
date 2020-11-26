@@ -1,0 +1,50 @@
+.checkoutItem {
+  width: fit-content;
+  position: relative;
+  &_delete {
+    margin-left: 17px;
+    cursor: pointer;
+  }
+  &_image {
+    width: 215px;
+    height: 316px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &_quantity {
+    display: flex;
+    margin: 10px 0;
+    &Container {
+      width: 38px;
+      height: 19px;
+      border: 1px solid rgba(#0000, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &_info {
+    text-align: left;
+    padding-left: 30px;
+  }
+  &_close {
+    position: absolute !important;
+    top: 18px;
+    right: 18px;
+    background: var(--main-orange) !important;
+    span {
+      position: relative;
+      right: 1px;
+      color: var(--main-black) !important;
+    }
+  }
+  .action {
+    background: var(--main-orange);
+    span {
+      color: var(--main-black);
+    }
+  }
+}
