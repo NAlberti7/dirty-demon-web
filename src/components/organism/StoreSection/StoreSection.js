@@ -3,8 +3,19 @@ import StoreDrop from "../../molecules/StoreDrop/StoreDrop";
 import ItemContainer from "../../molecules/ItemContainer/ItemContainer";
 import styles from "./StoreSection.module.scss";
 
-const StoreSection = ({ data, title = "", season = "", defaultOpen = true, isHoodie, isPants }) => {
+const StoreSection = ({
+  data,
+  title = "",
+  season = "",
+  defaultOpen = true,
+  isHoodie,
+  isPants,
+  newCollection,
+}) => {
   const [isOpen, isOpenHandler] = useState(defaultOpen);
+  data = !newCollection
+    ? data.filter((item) => !item.tags.find((el) => el == "collection 3"))
+    : data;
 
   let newHoodies;
   let oldHoodies;

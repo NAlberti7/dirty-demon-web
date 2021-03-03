@@ -34,7 +34,7 @@ const free = {
 const express = {
   type: "ENVIO EXPRESS",
   description:
-    "TU PEDIDO SERA DESPACHADO AL DIA SIGUIENTE DE TU COMPRA, LOS ENVIOS SON REALIZADOS A TRAVES DE PICKIT",
+    "TU PEDIDO SERA DESPACHADO AL DIA SIGUIENTE DE TU COMPRA, LOS ENVIOS SON REALIZADOS A TRAVES DE CORREO ARGENTINO",
   price: "DESDE $350",
 };
 
@@ -42,27 +42,27 @@ const CheckoutFirstStep = ({ selected, setSelected, register, errors }) => {
   return (
     <motion.div
       className={styles.checkoutFirstStep}
-      animate='in'
-      exit='out'
-      initial='out'
+      animate="in"
+      exit="out"
+      initial="out"
       variants={checkoutVariants}
     >
       <div className={styles.container}>
-        <CheckoutTitles title='DATOS DE CONTACTO' description='INGRESA TUS DATOS PERSONALES' />
+        <CheckoutTitles title="DATOS DE CONTACTO" description="INGRESA TUS DATOS PERSONALES" />
         <FieldGroup>
           <Field
-            name='email'
-            type='email'
-            placeholder='E-MAIL'
+            name="email"
+            type="email"
+            placeholder="E-MAIL"
             inputRef={register({
               required: "CAMPO REQUERIDO",
             })}
             error={errors.email}
           />
           <Field
-            name='phone'
-            type='text'
-            placeholder='TELEFONO (SOLO NUMEROS)'
+            name="phone"
+            type="text"
+            placeholder="TELEFONO (SOLO NUMEROS)"
             inputRef={register({
               required: "CAMPO REQUERIDO",
               pattern: /^\d+$/,
@@ -72,7 +72,7 @@ const CheckoutFirstStep = ({ selected, setSelected, register, errors }) => {
         </FieldGroup>
       </div>
       <div className={styles.container}>
-        <CheckoutTitles title='TIPO DE ENTREGA' description='SELECCIONA UNA OPCION' />
+        <CheckoutTitles title="TIPO DE ENTREGA" description="SELECCIONA UNA OPCION" />
         <ShippingCard
           item={free}
           isSelected={selected?.type === "RETIRO EN PUNTO DE ENTREGA"}

@@ -39,6 +39,7 @@ const DetailsMobile = ({ currentItem, closeSizeModal }) => {
 
   let isShirt = tags[0] === "remera";
   let isHoodie = tags[0] === "buzo";
+  let isShort = tags[0] === "short";
   let isSllpper = tags[0] === "slippers";
   let isPants = tags[0] === "pants";
   let isNew = tags[2] === "drop2" || tags[1] === "drop2";
@@ -59,17 +60,17 @@ const DetailsMobile = ({ currentItem, closeSizeModal }) => {
     <motion.div
       className={styles.detailsMobile}
       variants={variants}
-      animate='in'
-      exit='out'
-      initial='out'
+      animate="in"
+      exit="out"
+      initial="out"
     >
       <div className={styles.arrow} onClick={closeSizeModal}>
         <Arrow />
       </div>
-      <Text primary priority={3} size={15} color='black' align='center'>
+      <Text primary priority={3} size={15} color="black" align="center">
         TABLA DE TALLES
       </Text>
-      <Table isShirt={isShirt} isPants={isPants} />
+      <Table isShirt={isShirt} isPants={isPants} currentItem={currentItem} isShort={isShort} />
     </motion.div>
   );
 };

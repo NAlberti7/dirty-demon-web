@@ -60,9 +60,9 @@ const DetailsMobile = ({ currentItem, closeDetailsModal }) => {
     <motion.div
       className={styles.detailsMobile}
       variants={variants}
-      animate='in'
-      exit='out'
-      initial='out'
+      animate="in"
+      exit="out"
+      initial="out"
     >
       <div className={styles.arrow} onClick={closeDetailsModal}>
         <Arrow />
@@ -74,21 +74,22 @@ const DetailsMobile = ({ currentItem, closeDetailsModal }) => {
         isNew={isNew}
         fromDetails
         isPants={isPants}
+        currentItem={currentItem}
       />
-      <Text primary priority={3} size={15} color='black' align='center'>
+      <Text primary priority={3} size={15} color="black" align="center">
         CUIDADOS DE PRENDA
       </Text>
-      <Text priority={4} size={14} color='black' align='center'>
+      <Text priority={4} size={14} color="black" align="center">
         LAVAR CON AGUA FRIA (40º O MENOS) <br />
         NO USAR CLORO <br />
         NO USAR SECARROPA <br />
         NO PLANCHAR SOBRE LA ESTAMPA <br />
       </Text>
       <div className={styles.safety}>
-        <Icon type='care1' customWidth='42px' />
-        <Icon type='care2' customWidth='32px' />
-        <Icon type='care3' customWidth='36px' />
-        <Icon type='care4' customWidth='50px' />
+        <Icon type="care1" customWidth="42px" />
+        <Icon type="care2" customWidth="32px" />
+        <Icon type="care3" customWidth="36px" />
+        <Icon type="care4" customWidth="50px" />
       </div>
     </motion.div>
   );

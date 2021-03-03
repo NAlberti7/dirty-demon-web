@@ -91,25 +91,25 @@ const Item = ({
   return (
     <>
       <motion.main
-        initial='initial'
-        animate='in'
-        exit='out'
+        initial="initial"
+        animate="in"
+        exit="out"
         variants={pageVariants}
         className={styles.item}
       >
         {currentItem ? (
-          <motion.div className={styles.item_container} initial='exit' animate='enter' exit='exit'>
+          <motion.div className={styles.item_container} initial="exit" animate="enter" exit="exit">
             <AnimatePresence exitBeforeEnter>
               {!isPreviewActive && (
                 <>
-                  <ItemSheet currentItem={currentItem} key='itemsheet' />
+                  <ItemSheet currentItem={currentItem} key="itemsheet" />
                   {isMobile ? (
                     <Slider currentItem={currentItem} />
                   ) : (
                     <ItemShowCase
                       item={currentItem}
                       fromShowcase
-                      key='itemshowcae'
+                      key="itemshowcae"
                       config={{ initial: "exit", animate: "enter", exit: "exit" }}
                     />
                   )}
@@ -130,24 +130,30 @@ const Item = ({
           <motion.div
             className={styles.item_recommend}
             variants={recommendVariants}
-            initial='out'
-            exit='out'
-            animate='in'
+            initial="out"
+            exit="out"
+            animate="in"
           >
             <Text priority={2} primary size={42}>
               RECOMENDADO PARA TI
             </Text>
             {recommendData && (
-              <StoreSection data={recommendData} title='T-SHIRTS' season='DROP 1 / SS2020' />
+              <StoreSection data={recommendData} title="T-SHIRTS" season="DROP 1 / SS2020" />
             )}
           </motion.div>
         )}
       </motion.main>
+
+      {showSizeModal && !isMobile && (
+        <AnimatePresence exitBeforeEnter>
+          <SizeMobile />
+        </AnimatePresence>
+      )}
       {isMobile && (
         <>
           <AnimatePresence exitBeforeEnter>
-            {showSizeModal && <SizeMobile key='sizeMobile' />}
-            {showDetailsModal && <DetailsMobile key='detailsmobile' />}
+            {showSizeModal && <SizeMobile key="sizeMobile" />}
+            {showDetailsModal && <DetailsMobile key="detailsmobile" />}
           </AnimatePresence>
         </>
       )}

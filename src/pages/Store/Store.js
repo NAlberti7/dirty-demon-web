@@ -46,11 +46,15 @@ const Store = ({ itemList, sendToItemView, history }) => {
   const hoodieData = itemList && itemList.filter((item) => item.category === "buzo");
   const merchData = itemList && itemList.filter((item) => item.category === "merch");
   const pantsData = itemList && itemList.filter((item) => item.category === "pants");
+  const shortsData = itemList && itemList.filter((item) => item.category === "short");
+  const newCollection =
+    itemList && itemList.filter((item) => item.tags.find((el) => el == "collection 3"));
+  console.log("new", newCollection);
   return (
     <motion.main
-      initial='initial'
-      animate='in'
-      exit='out'
+      initial="initial"
+      animate="in"
+      exit="out"
       variants={isMobile ? null : pageVariants}
       className={styles.store}
     >
@@ -58,14 +62,21 @@ const Store = ({ itemList, sendToItemView, history }) => {
         <Text priority={1} primary size={42}>
           CLOTHING
         </Text>
+        {newCollection && (
+          <StoreSection
+            data={newCollection}
+            title="COLLECTION 3"
+            season="COLLECTION 3"
+            newCollection
+          />
+        )}
+        {shirtData && <StoreSection data={shirtData} title="T-SHIRTS" season="DROP 1 / SS2020" />}
         {hoodieData && (
-          <StoreSection data={hoodieData} title='HOODIES' season='DROP 1 / SS2020' isHoodie />
+          <StoreSection data={hoodieData} title="HOODIES" season="DROP 1 / SS2020" isHoodie />
         )}
-        {shirtData && <StoreSection data={shirtData} title='T-SHIRTS' season='DROP 1 / SS2020' />}
         {pantsData && (
-          <StoreSection data={pantsData} title='PANTS' season='DROP 2 / SS2020' isPants />
+          <StoreSection data={pantsData} title="PANTS" season="DROP 2 / SS2020" isPants />
         )}
-        {merchData && <StoreSection data={merchData} title='MERCH' season='DROP 2 / SS2020' />}
         {/* {itemList &&
           itemList.slice(0, 3).map((item) => {
             return <Item item={item} key={item.name} handleClick={handleClick} />;

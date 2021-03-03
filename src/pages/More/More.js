@@ -37,23 +37,23 @@ const More = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <motion.main
-      initial='initial'
-      animate='in'
-      exit='out'
+      initial="initial"
+      animate="in"
+      exit="out"
       variants={isMobile ? null : pageVariants}
       className={styles.more}
     >
       <article className={styles.more_article}>
-        <ContentWithTitle title='FAQS'>
+        <ContentWithTitle title="FAQS">
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               ¿Cuánto demora la entrega del pedido?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
               Los envíos que tengan como destino CABA y Provincia de Buenos Aires serán entregados
@@ -70,25 +70,25 @@ const More = () => {
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               ¿Cuál es el medio de entrega?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
-              Las entregas a domicilio se realizan a través del servicio privado PICKIT.
+              Las entregas a domicilio se realizan a través del servicio privado CORREO ARGENTINO.
             </Text>
             <ul>
               <li>
                 <Text
                   priority={3}
                   size={14}
-                  color='white'
-                  align='left'
+                  color="white"
+                  align="left"
                   customStyle={styles.more_articleMax}
                 >
                   <span>Envíos a domicilio:</span> Esta dirección de entrega será la que indiques en
@@ -96,16 +96,16 @@ const More = () => {
                   datos en tu perfil de nuestra Tienda Online. La dirección de entrega no tiene que
                   ser tu domicilio obligatoriamente, pero sí deberás tener acceso a éste para
                   obtener tu pedido. El costo de envío estará conforme a los precios vigentes del
-                  servicio privado PICKIT según distancia, considerando el origen en GBA (Gran
-                  Buenos Aires).
+                  servicio privado CORREO ARGENTINO según distancia, considerando el origen en GBA
+                  (Gran Buenos Aires).
                 </Text>
               </li>
               <li>
                 <Text
                   priority={3}
                   size={14}
-                  color='white'
-                  align='left'
+                  color="white"
+                  align="left"
                   customStyle={styles.more_articleMax}
                 >
                   <span>Retiro por el estudio de Dirty Demon:</span> El servicio no tiene costo. Te
@@ -117,8 +117,8 @@ const More = () => {
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               opacity={0.3}
               primary
               customStyle={styles.more_articleMax}
@@ -128,32 +128,32 @@ const More = () => {
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               ¿Cuál es el horario de entrega?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
-              El servicio de Pickit a domicilio se realiza entre las 8 y 18 hs de Lunes a Sábados.
-              No se podrá acordar un horario específico de entrega. No se efectúan entregas los
-              feriados nacionales ó en días de paro gremial. En tanto, el servicio de Entrega
+              El servicio de Correo Argentino a domicilio se realiza entre las 8 y 18 hs de Lunes a
+              Sábados. No se podrá acordar un horario específico de entrega. No se efectúan entregas
+              los feriados nacionales ó en días de paro gremial. En tanto, el servicio de Entrega
               Express, deberá ser acordado con nosotros. Una vez coordinado el envío, la entrega
               será efectiva en un plazo de tres horas como máximo.
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               ¿Mi pedido puede ser recibido por otra persona?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
               Si, Siempre y cuando la misma acredite su identidad al momento de la recepción con
@@ -162,52 +162,52 @@ const More = () => {
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               ¿Qué sucede si no estoy en mi casa cuando traen mi pedido?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
-              Todos los pedidos de Pickit con destino final un domicilio particular se rigen de la
-              siguiente manera: se realiza una primera visita y en caso de no estar presente el
-              titular de la compra o una persona autorizada, se dejará aviso de visita para realizar
-              una nueva visita el próximo día. En caso de que nadie se encuentre al momento de la
-              segunda visita, el pedido será enviado a la sucursal de Pickit más cercana. Este
-              pedido permanecerá allí durante los próximos 4 días para que pueda ser retirado
-              personalmente por el destinatario. Vencido este período, el pedido volverá a nuestras
-              oficinas. En esta instancia, se deberá concretar un nuevo envío que deberá ser abonado
-              por el cliente.
+              Todos los pedidos de Correo Argentino con destino final un domicilio particular se
+              rigen de la siguiente manera: se realiza una primera visita y en caso de no estar
+              presente el titular de la compra o una persona autorizada, se dejará aviso de visita
+              para realizar una nueva visita el próximo día. En caso de que nadie se encuentre al
+              momento de la segunda visita, el pedido será enviado a la sucursal de Correo Argentino
+              más cercana. Este pedido permanecerá allí durante los próximos 4 días para que pueda
+              ser retirado personalmente por el destinatario. Vencido este período, el pedido
+              volverá a nuestras oficinas. En esta instancia, se deberá concretar un nuevo envío que
+              deberá ser abonado por el cliente.
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               ¿Cómo puedo consultar el seguimiento de mi pedido?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
               Cuando el pedido sea empaquetado, recibirás por e-mail de nuestro encargado de nuestro
-              e-shop, el código de tracking o seguimiento proporcionado por Pickit que te permitirá
-              conocer la posición exacta del paquete.
+              e-shop, el código de tracking o seguimiento proporcionado por Correo Argentino que te
+              permitirá conocer la posición exacta del paquete.
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               Quiero cancelar mi pedido, ¿qué debo hacer?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
               Los pedidos pueden ser cancelados hasta el momento que son empaquetados. Generalmente
@@ -219,14 +219,14 @@ const More = () => {
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               Si mi pedido no llega en el tiempo estipulado, ¿cómo reclamo?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
               Bastará con que nos escribas a dirtydemon404@gmail.com Indicando el Número de Orden,
@@ -234,14 +234,14 @@ const More = () => {
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               ¿Qué pasa con toda la información personal que cargué en la página web?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
               DIRTY DEMON se compromete a conservar la política de confidencialidad con el objetivo
@@ -252,14 +252,14 @@ const More = () => {
             </Text>
           </div>
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               ¿Qué hago si encuentro problemas técnicos en su e-shop?
             </Text>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
               Por favor, escribinos a dirtydemon404@gmail.com.
@@ -268,17 +268,17 @@ const More = () => {
         </ContentWithTitle>
       </article>
       <article className={styles.more_article}>
-        <ContentWithTitle title='POLICY'>
+        <ContentWithTitle title="POLICY">
           <div className={styles.question}>
-            <Text priority={3} size={14} color='white' align='left' opacity={0.3} primary>
+            <Text priority={3} size={14} color="white" align="left" opacity={0.3} primary>
               En el caso de requerir un cambio
             </Text>
 
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               customStyle={styles.more_articleMax}
             >
               En caso de querer cambiar un producto, no podrás hacerlo por otra prenda y menos si
@@ -296,19 +296,19 @@ const More = () => {
         </ContentWithTitle>
       </article>
       <article className={styles.more_article}>
-        <ContentWithTitle title='SAFETY'>
+        <ContentWithTitle title="SAFETY">
           <div className={styles.question}>
             <div className={styles.safety}>
-              <Icon type='care1' customWidth='75px' />
-              <Icon type='care2' customWidth='58px' />
-              <Icon type='care3' customWidth='62px' />
-              <Icon type='care4' customWidth='90px' />
+              <Icon type="care1" customWidth="75px" />
+              <Icon type="care2" customWidth="58px" />
+              <Icon type="care3" customWidth="62px" />
+              <Icon type="care4" customWidth="90px" />
             </div>
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               primary
               customStyle={styles.more_safety}
               opacity={0.2}
@@ -320,8 +320,8 @@ const More = () => {
             <Text
               priority={3}
               size={14}
-              color='orange'
-              align='left'
+              color="orange"
+              align="left"
               primary
               customStyle={styles.more_safety}
             >
@@ -330,8 +330,8 @@ const More = () => {
             <Text
               priority={3}
               size={14}
-              color='white'
-              align='left'
+              color="white"
+              align="left"
               primary
               customStyle={styles.more_safety}
             >

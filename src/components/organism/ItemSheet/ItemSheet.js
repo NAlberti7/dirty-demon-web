@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { setColor, setItemByColor } from "../../../store/actions/generalActions";
+import { setColor, setItemByColor, openSizeModal } from "../../../store/actions/generalActions";
 import { addItemCart } from "../../../store/actions/cartActions";
 import ItemNavigation from "../../molecules/ItemNavigation/ItemNavigation";
 import ItemInfo from "../../molecules/ItemInfo/ItemInfo";
@@ -30,7 +30,7 @@ const configColor = {
   others: {},
 };
 
-const ItemSheet = ({ currentItem, setItemByColor, addItemCart }) => {
+const ItemSheet = ({ currentItem, setItemByColor, addItemCart, openSizeModal }) => {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [emptyStock, setEmptyStock] = useState(false);
@@ -80,13 +80,13 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart }) => {
     <motion.div
       className={styles.itemSheet}
       variants={backVariants}
-      initial='exit'
-      animate='enter'
-      exit='exit'
+      initial="exit"
+      animate="enter"
+      exit="exit"
     >
       <div className={styles.itemSheet_container}>
         <ItemNavigation title={name} isMobile={isMobile} />
-        <Text size={isMobile ? 21 : 32} primary priority={1} color='orange'>
+        <Text size={isMobile ? 21 : 32} primary priority={1} color="orange">
           ${price}
         </Text>
       </div>
@@ -98,20 +98,34 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart }) => {
             isSllpper={isSllpper}
             isNew={isNew}
             isPants={isPants}
+            currentItem={currentItem}
           />
         </div>
       )}
+      {!isMobile && (
+        <div
+          onClick={openSizeModal}
+          style={{ width: "100%", cursor: "pointer", paddingBottom: "10px" }}
+        >
+          <Text size={14} color="orange" priority={4} primary customStyle={styles.decor}>
+            TABLA DE TALLES
+          </Text>
+        </div>
+      )}
+      {/* <Button handleOnClick={openSizeModal} customStyle={styles.tabla} disabled={false}>
+        TABLA DE TALLES
+      </Button> */}
       <div className={`${styles.itemSheet_container} ${styles.selector}`}>
         <Selector
           data={stock}
-          title='SELECCIONAR TALLE'
+          title="SELECCIONAR TALLE"
           config={config}
           selected={selectedSize}
           handleSelect={setSelectedSize}
         />
         <Selector
           data={colors}
-          title='COLOR'
+          title="COLOR"
           config={configColor}
           selected={selectedColor}
           handleSelect={colorHandler}
@@ -134,4 +148,4 @@ const mapStateToProps = (state) => ({
   currentColors: state.general.currentColors,
 });
 
-export default connect(mapStateToProps, { setItemByColor, addItemCart })(ItemSheet);
+export default connect(mapStateToProps, { setItemByColor, addItemCart, openSizeModal })(ItemSheet);

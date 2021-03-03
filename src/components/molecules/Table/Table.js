@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Table.module.scss";
 
-const SHIRT = [
+//OLD
+const SHIRTOLD = [
   {
     talle: "S",
     largo: "65cm",
@@ -24,7 +25,32 @@ const SHIRT = [
   },
 ];
 
-const HOODIE = [
+//NEW
+const SHIRT = [
+  {
+    talle: "S",
+    largo: "75cm",
+    ancho: "57cm",
+  },
+  {
+    talle: "M",
+    largo: "78cm",
+    ancho: "59cm",
+  },
+  {
+    talle: "L",
+    largo: "80cm",
+    ancho: "62cm",
+  },
+  {
+    talle: "XL",
+    largo: "82cm",
+    ancho: "64cm",
+  },
+];
+
+//OLD
+const HOODIEOLD = [
   {
     talle: "S",
     largo: "68cm",
@@ -47,6 +73,33 @@ const HOODIE = [
     talle: "XL",
     largo: "77cm",
     ancho: "66cm",
+    manga: "62cm",
+  },
+];
+
+const HOODIE = [
+  {
+    talle: "S",
+    largo: "73cm",
+    ancho: "62cm",
+    manga: "54cm",
+  },
+  {
+    talle: "M",
+    largo: "75cm",
+    ancho: "65cm",
+    manga: "57cm",
+  },
+  {
+    talle: "L",
+    largo: "77cm",
+    ancho: "68cm",
+    manga: "60cm",
+  },
+  {
+    talle: "XL",
+    largo: "80cm",
+    ancho: "69cm",
     manga: "62cm",
   },
 ];
@@ -74,12 +127,42 @@ const PANTS = [
   },
 ];
 
-const Table = ({ isShirt, isPants }) => {
+const SHORTS = [
+  {
+    talle: "S",
+    largo: "46cm",
+    ancho: "36cm",
+    pierna: "32cm",
+  },
+  {
+    talle: "M",
+    largo: "49cm",
+    ancho: "38cm",
+    pierna: "31cm",
+  },
+  {
+    talle: "L",
+    largo: "51cm",
+    ancho: "36cm",
+    pierna: "33cm",
+  },
+  {
+    talle: "XL",
+    largo: "53cm",
+    ancho: "42cm",
+    pierna: "34cm",
+  },
+];
+
+const Table = ({ isShirt, isPants, isShort, currentItem }) => {
   let DATA;
 
-  if (isShirt) DATA = SHIRT;
+  const isNewCollection = currentItem.tags.find((item) => item === "collection 3");
+
+  if (isShirt) DATA = isNewCollection ? SHIRT : SHIRTOLD;
   else if (isPants) DATA = PANTS;
-  else DATA = HOODIE;
+  else if (isShort) DATA = SHORTS;
+  else DATA = isNewCollection ? HOODIE : HOODIEOLD;
 
   const renderRows = (item) => {
     return (
@@ -87,7 +170,8 @@ const Table = ({ isShirt, isPants }) => {
         <td>{item.talle}</td>
         <td>{item.largo}</td>
         <td>{item.ancho}</td>
-        {!isShirt && !isPants && <td>{item.manga}</td>}
+        {!isShirt && !isPants && !isShort && <td>{item.manga}</td>}
+        {!isShirt && !isPants && isShort && <td>{item.pierna}</td>}
       </tr>
     );
   };
@@ -98,7 +182,8 @@ const Table = ({ isShirt, isPants }) => {
           <th>TALLE</th>
           <th>LARGO</th>
           <th>ANCHO</th>
-          {!isShirt && !isPants && <th>MANGA</th>}
+          {!isShirt && !isPants && !isShort && <th>MANGA</th>}
+          {!isShirt && !isPants && isShort && <th>PIERNA</th>}
         </tr>
         {DATA &&
           DATA.map((item) => {

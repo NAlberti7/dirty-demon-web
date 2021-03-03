@@ -38,14 +38,14 @@ const pageVariants = {
 const Contact = () => {
   return (
     <motion.main
-      initial='initial'
-      animate='in'
-      exit='out'
+      initial="initial"
+      animate="in"
+      exit="out"
       variants={pageVariants}
       className={styles.contact}
     >
-      <ContentWithTitle title='TRACKING'>
-        <Text tag='h3' size={14} align='left' color='white' primary>
+      <ContentWithTitle title="TRACKING">
+        <Text tag="h3" size={14} align="left" color="white" primary>
           SI HA HECHO UN PEDIDO Y DESEA SABER EL ESTADO Y LA POSICION ACTUAL de su producto, COPIE Y
           PEGUE EL CODIGO QUE FUE ENVIADO AL CORREO ELECTRONICO ASIGNADO CON SU COMPRA. <br />{" "}
           <br />
@@ -53,11 +53,11 @@ const Contact = () => {
           contáctese con nosotros para que le reenviemos el mismo.`.toUpperCase()}{" "}
           <br /> <br />
         </Text>
-        <Text tag='h3' size={14} align='left' color='white' primary opacity={0.2}>
-          {`Los envíos se realizan a traves de Pickit. una vez despachados no somos responsables de las demoras que se generen en el correspondiente circuito. `.toUpperCase()}{" "}
+        <Text tag="h3" size={14} align="left" color="white" primary opacity={0.2}>
+          {`Los envíos se realizan a traves de Correo Argentino. una vez despachados no somos responsables de las demoras que se generen en el correspondiente circuito. `.toUpperCase()}{" "}
           <br /> <br />
         </Text>
-        <Text tag='h2' size={14} align='left' color='white' primary>
+        <Text tag="h2" size={14} align="left" color="white" primary>
           SEGUIMIENTO DE PEDIDO
         </Text>
 

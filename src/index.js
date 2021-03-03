@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store, persistor } from "./store/index";
 import { PersistGate } from "redux-persist/integration/react";
-console.log = () => {};
+// console.log = () => {};
 const app = (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
