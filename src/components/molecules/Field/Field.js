@@ -26,7 +26,7 @@ const Field = ({ name, placeholder, inputRef, type, error, isSelect, isTextArea 
   return (
     <div className={`${styles.field} ${isTextArea && styles.isTextArea}`}>
       {inputHandler()}
-      <Text tag='span' size={12} weight='semibold' align='center' color='orange'>
+      <Text tag='span' size={12} weight='semibold' align='center' color='white'>
         {error && error.message}
       </Text>
     </div>

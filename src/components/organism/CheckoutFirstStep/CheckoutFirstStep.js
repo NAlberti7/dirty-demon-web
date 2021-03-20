@@ -48,7 +48,7 @@ const CheckoutFirstStep = ({ selected, setSelected, register, errors }) => {
       variants={checkoutVariants}
     >
       <div className={styles.container}>
-        <CheckoutTitles title="DATOS DE CONTACTO" description="INGRESA TUS DATOS PERSONALES" />
+        <CheckoutTitles title="DATOS DE CONTACTO" description="" />
         <FieldGroup>
           <Field
             name="email"
@@ -72,7 +72,7 @@ const CheckoutFirstStep = ({ selected, setSelected, register, errors }) => {
         </FieldGroup>
       </div>
       <div className={styles.container}>
-        <CheckoutTitles title="TIPO DE ENTREGA" description="SELECCIONA UNA OPCION" />
+        <CheckoutTitles title="TIPO DE ENTREGA" description="" />
         <ShippingCard
           item={free}
           isSelected={selected?.type === "RETIRO EN PUNTO DE ENTREGA"}

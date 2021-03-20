@@ -27,7 +27,7 @@ function isSoldOut(stock) {
   return stock.reduce((accum, item) => accum + item.stock, 0);
 }
 
-const Item = ({ item, handleClick, fromShowcase, config, isOldHoodie }) => {
+const Item = ({ item, handleClick, fromShowcase, config, isOldHoodie, isOpen }) => {
   const front = item.itemPicture.front;
   const back = item.itemPicture.back;
 
@@ -35,7 +35,7 @@ const Item = ({ item, handleClick, fromShowcase, config, isOldHoodie }) => {
 
   return (
     <motion.div
-      className={`${styles.item} ${fromShowcase && styles.fromShowcase}`}
+      className={`${styles.item} ${fromShowcase && styles.fromShowcase} ${!isOpen && styles.isClosed}`}
       onClick={() => {
         if (!fromShowcase) handleClick(item);
       }}
@@ -47,7 +47,7 @@ const Item = ({ item, handleClick, fromShowcase, config, isOldHoodie }) => {
     >
       {!sold && (
         <div className={styles.old}>
-          <Text size={13} priority={6} primary color="black">
+          <Text size={13} priority={6} primary color="white">
             AGOTADO
           </Text>
         </div>

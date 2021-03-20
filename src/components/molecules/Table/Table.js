@@ -166,7 +166,7 @@ const Table = ({ isShirt, isPants, isShort, currentItem }) => {
 
   const renderRows = (item) => {
     return (
-      <tr>
+      <tr className={styles.table_row}>
         <td>{item.talle}</td>
         <td>{item.largo}</td>
         <td>{item.ancho}</td>
@@ -178,7 +178,7 @@ const Table = ({ isShirt, isPants, isShort, currentItem }) => {
   return (
     <div className={styles.table}>
       <table>
-        <tr>
+        <tr className={styles.table_title}>
           <th>TALLE</th>
           <th>LARGO</th>
           <th>ANCHO</th>

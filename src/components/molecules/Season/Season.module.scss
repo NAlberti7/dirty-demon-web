@@ -6,15 +6,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  position: absolute;
+  flex: 2;
+  .absolute{
+      position: absolute;
   bottom: 9px;
   left: 0;
+  @include respond(phone) {
+    bottom: initial;
+    svg{
+      width: 67px;
+    }
+  }
+  }
+  .basics{
+    bottom: 20px;
+    left: 10px;
+  }
   @include respond(desktop) {
     left: 40px;
   }
   &.fromHome {
     opacity: 0;
     visibility: hidden;
+    flex: none;
   }
   h3 {
     text-align: left;
@@ -28,5 +42,6 @@
     position: relative;
     bottom: initial;
     left: initial;
+    flex: none;
   }
 }

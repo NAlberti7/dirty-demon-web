@@ -3,7 +3,7 @@ import styles from "./ShippingCard.module.scss";
 import Text from "../../atoms/Text/Text";
 import { motion } from "framer-motion";
 
-const ShippingCard = ({ item, isSelected, setSelected, controls }) => {
+const ShippingCard = ({ item, isSelected, setSelected = console.log, controls }) => {
   const { type, description, price } = item;
   return (
     <motion.div
@@ -17,7 +17,7 @@ const ShippingCard = ({ item, isSelected, setSelected, controls }) => {
       <Text tag='h3' size={14} color='white' opacity={isSelected ? 1 : 0.4} align='left'>
         {description}
       </Text>
-      <Text primary tag='h4' size={14} color='orange' align='left'>
+      <Text primary tag='h4' size={14} color='white' align='right'>
         {price}
       </Text>
     </motion.div>

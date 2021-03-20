@@ -31,16 +31,41 @@ const CheckoutItem = ({
         <img src={itemPicture.front} />
       </div>
       <div className={styles.checkoutItem_info}>
-        <Text priority={2} primary size={15} color='white' align='left'>
-          {name}
-        </Text>
-
-        <Text priority={3} size={15} color='white' align='left' weight='light'>
-          COLOR {color.toUpperCase()}
-        </Text>
-        <Text priority={3} size={15} color='white' align='left' weight='light'>
-          TALLE {size.toUpperCase()}
-        </Text>
+        <div className={styles.checkoutItem_infoItem}>
+          <Text tag="span"  size={14} color='white' align='left' opacity={0.5}>
+            PRENDA
+          </Text>
+          <Text tag="span"  size={14} color='white' align='right'>
+            {name}
+          </Text>
+        </div>
+        <div className={styles.checkoutItem_infoItem}>
+          <Text tag="span"  size={14} color='white' align='left' opacity={0.5}>
+            COLOR
+          </Text>
+          <Text tag="span"  size={14} color='white' align='right'>
+          {color.toUpperCase()}
+          </Text>
+        </div>
+        <div className={styles.checkoutItem_infoItem}>
+          <Text tag="span"  size={14} color='white' align='left' opacity={0.5}>
+            TALLE
+          </Text>
+          <Text tag="span"  size={14} color='white' align='right'>
+          {size.toUpperCase()}
+          </Text>
+        </div>
+        <div className={`${styles.checkoutItem_infoItem} ${styles.price}`}>
+          <Text tag="span"  size={14} color='white' align='left' opacity={0.5}>
+            PRECIO
+          </Text>
+          <Text tag="span"  size={14} color='white' align='right'>
+          ${price}
+          </Text>
+        </div>
+        
+        
+   
         <div className={styles.checkoutItem_quantity}>
           <ActionButton
             type='min'
@@ -48,7 +73,7 @@ const CheckoutItem = ({
             customStyle={styles.action}
           />
           <div className={styles.checkoutItem_quantityContainer}>
-            <Text priority={3} size={15} color='white' align='left' weight='light'>
+            <Text priority={3} size={14} color='white' align='left' weight='light'>
               {quantity}
             </Text>
           </div>
@@ -62,15 +87,12 @@ const CheckoutItem = ({
               className={styles.checkoutItem_delete}
               onClick={() => removeItemCart(item._id, size, index)}
             >
-              <Text tag='span' size={15} color='orange' align='left'>
-                RETIRAR
+              <Text tag='span' size={14} color='white' align='left'>
+                ELIMINAR
               </Text>
             </div>
           )}
         </div>
-        <Text priority={3} primary size={15} color='white' align='left'>
-          ${price}
-        </Text>
       </div>
     </div>
   );

@@ -320,7 +320,7 @@ const More = () => {
             <Text
               priority={3}
               size={14}
-              color="orange"
+              color="white"
               align="left"
               primary
               customStyle={styles.more_safety}

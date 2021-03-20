@@ -1,0 +1,49 @@
+@import "../../../utils/media.scss";
+.filters{
+    margin-top: 28px;
+    position: relative;
+    @include respond(phone) {
+        position: relative;
+      }
+    &_main{
+        margin: 16px 0;
+    }
+    p{
+        cursor: pointer;
+    }
+}
+
+.storeDrop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_title {
+      display: flex;
+    }
+    &_drop {
+      background: none;
+      fill: white;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .basics{
+      svg, path{
+        fill: black
+      }
+    }
+  }
+  
+
+  .itemContainer {
+    width: 100%;
+    position: relative;
+    &_items {
+      width: 100%;
+    }
+  }
+  
+  .filterDrop{
+      width: 100%;
+  }

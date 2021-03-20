@@ -1,13 +1,14 @@
 .checkoutItem {
   width: fit-content;
   position: relative;
+  margin-right: 15px;
   &_delete {
-    margin-left: 17px;
+    margin-left: auto;
     cursor: pointer;
   }
   &_image {
-    width: 215px;
-    height: 316px;
+    width: 267px;
+    height: 330px;
     img {
       width: 100%;
       height: 100%;
@@ -28,7 +29,11 @@
   }
   &_info {
     text-align: left;
-    padding-left: 30px;
+    margin-top: 35px;
+    &Item{
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &_close {
     position: absolute !important;
@@ -42,9 +47,13 @@
     }
   }
   .action {
-    background: var(--main-orange);
+    background: var(--main-white);
     span {
       color: var(--main-black);
     }
   }
+}
+
+.price{
+  margin: 20px 0;
 }

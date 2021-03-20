@@ -20,9 +20,9 @@ const ItemInfo = ({ type, color, isSllpper, isPants, isNew, fromDetails, current
   return (
     <div className={styles.itemInfo}>
       <div className={styles.itemInfo_container}>
-        <Text tag="p" size={14} primary>
+        <Text tag="p" size={14} opacity={0.5}>
           {isSllpper && (
-            <Text tag="span" size={14} primary color="orange">
+            <Text tag="span" size={14} color="orange" >
               EXCLUSIVE MERCH
             </Text>
           )}
@@ -37,16 +37,6 @@ const ItemInfo = ({ type, color, isSllpper, isPants, isNew, fromDetails, current
           {!isSllpper && "100% ALGODON"}
         </Text>
       </div>
-      {fromDetails || isSllpper ? null : (
-        <div className={styles.itemInfo_container}>
-          <Text tag="p" size={14} opacity={0.3}>
-            {isCollection ? "COLLECTION 3" : `DROP ${isNew ? "2" : "1"}`}
-            <br />
-            *UNIDADES LIMITADAS <br />
-            *HASTA AGOTAR STOCK
-          </Text>
-        </div>
-      )}
     </div>
   );
 };

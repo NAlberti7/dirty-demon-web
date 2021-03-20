@@ -3,24 +3,19 @@
 .itemContainer {
   width: 100%;
   position: relative;
-  &.hoodie {
-    width: 45%;
-    @include respond(phone) {
-      width: 100%;
-    }
-  }
   &_title {
     text-align: left;
   }
   &_items {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     @include respond(phone) {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
     }
   }
 }

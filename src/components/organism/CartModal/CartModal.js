@@ -16,7 +16,7 @@ const CartModal = ({
   cartItems,
   totalPrice,
   showCart,
-  fromCheckout,
+  fromCheckout =true,
   dataName,
   payToMercadoPago,
   userInfo,
@@ -68,114 +68,20 @@ const CartModal = ({
   return (
     <>
       <div className={styles.cartModalOverlay} onClick={() => showCart()}></div>
-      <div className={styles.cartModal}>
-        {fromCheckout && (
-          <header className={styles.cartModal_header}>
-            <Text priority={1} primary size={20} color='black' align='center'>
-              ¡ATENCION {userInfo.name.toUpperCase()}!
+      <div className={styles.continue}>
+      <Text priority={3} size={18} color='white' align='center'>
+              ATENCION
             </Text>
-          </header>
-        )}
-        <header className={`${styles.cartModal_header} ${fromCheckout && styles.fromCheckout}`}>
-          {!fromCheckout ? (
-            <Text priority={2} primary size={15} color='black' align='center'>
-              ¡AÑADIDO AL CARRITO CORRECTAMENTE!
+            <Text priority={4} size={18} color='white' align='center' >
+                        SERAS REDIRIGIDO A MERCADOPAGO 
+            PARA FINALIZAR LA COMPRA. ES UN 
+            LINK SEGURO Y TUS DATOS ESTAN 
+            100% PROTEGIDOS
             </Text>
-          ) : (
-            <>
-              <Text
-                priority={2}
-                primary
-                size={15}
-                color='black'
-                align={isMobile ? "center" : "left"}
-              >
-                SERAS REDIRECCIONADO A MERCADOPAGO PARA FINALIZAR EL PROCESO DE COMPRA.{" "}
-                {!isMobile && (
-                  <Text tag='span' primary size={15} color='white' align='left'>
-                    REVISA LA INFORMACION DE TU COMPRA.
-                  </Text>
-                )}
-              </Text>
-              {isMobile ? (
-                <Text priority={2} primary size={15} color='white' align='center'>
-                  REVISA LA INFORMACION DE TU COMPRA.
-                </Text>
-              ) : (
-                <Text priority={2} size={15} color='black' align='left'>
-                  UNA VEZ REALIZADO EL PAGO RECIBIRAS UN MAIL CON LA CONFIR- MACION DE LA COMPRA Y
-                  SU CODIGO DE SEGUIMIENTO.
-                </Text>
-              )}
-            </>
-          )}
-        </header>
-        <main className={styles.cartModal_main}>
-          {fromCheckout ? (
-            <Text priority={3} primary size={17} color='black' align='center'>
-              RESUMEN DEL PEDIDO
-            </Text>
-          ) : (
-            <Text priority={3} primary size={15} color='black' align='center'>
-              ({cartItems?.length})CARRITO
-            </Text>
-          )}
-          <div className={styles.cartModal_mainContainer}>
-            {cartItems &&
-              cartItems.map((item, index) => {
-                return (
-                  <CartItem
-                    item={item}
-                    index={index}
-                    fromCheckout={fromCheckout}
-                    isMobile={isMobile}
-                  />
-                );
-              })}
-            {fromCheckout && sendType === "ENVIO EXPRESS" && (
-              <CartItem
-                item={{
-                  shipping: `${userInfo.street} ${userInfo.streetnumber} ${userInfo.optional}, ${userInfo.cp}, ${userInfo.locality}, ${userInfo.province}`,
-                  name: "ENVIO EXPRESS",
-                  quantity: 1,
-                  index: 10,
-                  price: totalSendValue,
-                }}
-                isMobile={isMobile}
-                fromCheckout
-                isShipping
-              />
-            )}
-          </div>
-          {fromCheckout && !isMobile && (
-            <Text priority={4} primary size={15} color='black' align='center'>
-              TOTAL ${totalPrice}
-            </Text>
-          )}
-          {fromCheckout && errorMessage && (
-            <Text tag='p' size={12} weight='semibold' align='center' color='black'>
-              {errorMessage}
-            </Text>
-          )}
-        </main>
-        <footer className={styles.cartModal_footer}>
-          {isMobile && fromCheckout && (
-            <Text priority={4} primary size={15} color='black' align='center'>
-              TOTAL ${totalPrice}
-            </Text>
-          )}
-          {fromCheckout && isMobile ? null : (
-            <Button
-              handleOnClick={() => showCart()}
-              customStyle={isMobile ? styles.mobileContinue : ""}
-            >
-              CONTINUAR NAVEGANDO
-            </Button>
-          )}
-          <Button handleOnClick={handleButton} isSecondary disabled={fromCheckout && isSubmitting}>
-            {fromCheckout ? "FINALIZAR COMPRA" : "PROCESO DE PAGO"}
+
+          <Button handleOnClick={handleButton}>
+           CONTINUAR
           </Button>
-        </footer>
       </div>
     </>
   );

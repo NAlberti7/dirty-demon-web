@@ -6,12 +6,12 @@ import Text from "../../atoms/Text/Text";
 import Icon from "../../atoms/Icon/Icon";
 import { connect } from "react-redux";
 import { closeSizeModal } from "../../../store/actions/generalActions";
-import { ReactComponent as Arrow } from "../../../assets/images/arrow2.svg";
+import { ReactComponent as Cross } from "../../../assets/images/Cross.svg";
 import { motion } from "framer-motion";
 import Table from "../../molecules/Table/Table";
 const variants = {
   in: {
-    y: 0,
+    y: "-50%",
     x: "-50%",
     opacity: 1,
     transition: {
@@ -23,7 +23,7 @@ const variants = {
   },
   out: {
     opacity: 1,
-    y: 500,
+    y: 200,
     x: "-50%",
     transition: {
       duration: 0.2,
@@ -65,9 +65,9 @@ const DetailsMobile = ({ currentItem, closeSizeModal }) => {
       initial="out"
     >
       <div className={styles.arrow} onClick={closeSizeModal}>
-        <Arrow />
+        <Cross />
       </div>
-      <Text primary priority={3} size={15} color="black" align="center">
+      <Text primary priority={3} size={15} color="white" align="center">
         TABLA DE TALLES
       </Text>
       <Table isShirt={isShirt} isPants={isPants} currentItem={currentItem} isShort={isShort} />

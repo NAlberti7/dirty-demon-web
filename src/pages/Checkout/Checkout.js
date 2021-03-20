@@ -5,6 +5,7 @@ import CheckoutFirstStep from "../../components/organism/CheckoutFirstStep/Check
 import CheckoutSecondStep from "../../components/organism/CheckoutSecondStep/CheckoutSecondStep";
 import ModalPreview from "../../components/organism/ModalPreview/ModalPreview";
 import Text from "../../components/atoms/Text/Text";
+import CheckoutModal from "../../components/organism/CartModal/CartModal";
 import styles from "./Checkout.module.scss";
 import { connect } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,10 +13,10 @@ import { useForm } from "react-hook-form";
 import {
   calculateZipCode,
   calculatePrice,
-  showCart,
+  showChekoutModal,
   setUserInfo,
   setSendType,
-} from "../../store/actions/cartActions";
+} from "../../store/actions/index";
 import Form from "../../components/atoms/Form/Form";
 import { useMediaQuery } from "react-responsive";
 const pageVariants = {
@@ -48,30 +49,9 @@ const pageVariants = {
   },
 };
 
-const shipVariants = {
-  visible: {
-    y: [200, 0, 0, 0],
-    x: [500, 500, 500, 0],
-    opacity: 1,
-    transition: {
-      duration: 1,
-      ease: "easeOut",
-    },
-  },
-  hidden: {
-    opacity: 0,
-  },
-};
-
 const formVariants = {
   visible: {
-    x: [-500, 0],
     opacity: 1,
-    transition: {
-      duration: 0.5,
-      delay: 1,
-      ease: "easeInOut",
-    },
   },
   hidden: {
     opacity: 0,
@@ -86,10 +66,11 @@ const Checkout = ({
   totalPrice,
   calculatePrice,
   showPreviewModal,
-  showCart,
+  showChekoutModal,
   setUserInfo,
   setSendType,
   history,
+  showCheck
 }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [selected, setSelected] = useState(null);
@@ -142,9 +123,13 @@ const Checkout = ({
     } else {
       setUserInfo({ ...infoFirst, ...data });
       setSendType(selected.type);
-      showCart();
+      showChekoutModal(true);
     }
   };
+
+  const sendPrice = sendValue.includes("INGRESA") ? 0 : Number(sendValue.replace("$", ""));
+  const value = Number(totalPrice) - sendPrice
+  console.log("sendvalue", sendValue)
 
   return (
     <>
@@ -153,18 +138,47 @@ const Checkout = ({
           <article className={styles.checkout}>
             {!isMobile && (
               <motion.section
-                className={styles.checkout_left}
+                className={styles.cart_left}
                 initial="hidden"
                 animate="visible"
-                variants={shipVariants}
+                variants={isMobile ? null : formVariants}
               >
-                <ShipImage shipImage={cartItems[0]?.ship_image} name={cartItems[0]?.name} isBig />
-                <Button
+                 <div className={styles.cart_title}>
+          <Text priority={1} primary size={isMobile ? 40 : 72} color='white' align='left'>
+            CART
+          </Text>
+          {isMobile && (
+            <Text priority={1} primary size={18} color='white' align='left'>
+              ({cartItems.length})ITEMS
+            </Text>
+          )}
+        </div>
+        {!isMobile && (
+          <div>
+            <Text priority={3} size={14} color='white' align='left' opacity={0.5}>
+              {cartItems.length} ARTICULOS
+            </Text>
+            <Text priority={3} size={14} color='white' align='left' opacity={0.5}>
+              PRECIO: ${value} <br />
+              + <br />
+              {sendValue.includes("INGRESA") ? "CALCULANDO ENVIO" : "Envio: " + `${selected.price === "GRATIS" ? "GRATUITO" : sendValue}`}
+            </Text>
+            <Text priority={3} size={14} color='white' align='left' opacity={0.5} customStyle={styles.iva}>
+            IVA(*) INCLUIDO
+            </Text>
+          <div className={styles.cart_leftFooter}>
+            <Text priority={5} primary size={14} color='white' align='left'>
+              TOTAL ${totalPrice}
+            </Text>
+            <Button
                   type="submit"
                   disabled={!formState.isValid || !selected || formState.isSubmitting}
                 >
                   CONTINUAR COMPRA
                 </Button>
+          </div>
+          </div>
+        )}
               </motion.section>
             )}
             <motion.section
@@ -212,6 +226,7 @@ const Checkout = ({
         </Form>
       </motion.main>
       {showPreviewModal && <ModalPreview fromCheckout />}
+      {showCheck && < CheckoutModal />}
     </>
   );
 };
@@ -222,12 +237,17 @@ const mapStateToProps = (state) => ({
   sendValue: state.general.sendValue,
   isRequestingSend: state.cart.isRequestingSend,
   showPreviewModal: state.general.showPreviewModal,
+  showCheck: state.general.showCheckoutModal,
 });
 
 export default connect(mapStateToProps, {
   calculateZipCode,
   calculatePrice,
-  showCart,
+  showChekoutModal,
   setUserInfo,
   setSendType,
 })(Checkout);
+
+
+
+

@@ -8,7 +8,7 @@ const variants = {
     x: 267,
   },
   nothover: {
-    x: 160,
+    x: 222,
   },
 };
 
@@ -33,10 +33,10 @@ const DirtyMainInfo = () => {
             size={isMobile ? 29 : 57}
             tag='h2'
             primary
-            color='orange'
+            color='white'
             customStyle={styles.margin}
           >
-            {isHover ? "HOODIES" : "HYPE"}
+            {isHover ? "HOODIES" : "DESIGN"}
           </Text>
           {!isMobile ? (
             <motion.div
@@ -45,16 +45,16 @@ const DirtyMainInfo = () => {
               initial='nothover'
               animate={isHover ? "hover" : "nothover"}
             >
-              <Text size={isMobile ? 29 : 57} tag='h2' primary color='orange' opacity={0.4}>
+              <Text size={isMobile ? 29 : 57} tag='h2' primary color='white' opacity={0.4}>
                 X
               </Text>
             </motion.div>
           ) : (
-            <Text size={29} tag='span' primary color='orange' opacity={0.4}>
+            <Text size={29} tag='span' primary color='white' opacity={0.4}>
               X
             </Text>
           )}
-          <Text size={isMobile ? 29 : 57} tag='h2' primary color='orange'>
+          <Text size={isMobile ? 29 : 57} tag='h2' primary color='white'>
             {isHover ? "TSHIRTS" : "STREETWEAR"}
           </Text>
         </div>

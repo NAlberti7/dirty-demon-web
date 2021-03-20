@@ -203,3 +203,38 @@ export const closeSizeModal = () => {
     type: actionTypes.CLOSE_SIZE_MDOAL,
   };
 };
+
+
+export const setMainFilter = (filter) => {
+  return {
+    type: actionTypes.SET_MAIN_FILTER,
+    payload: filter,
+  };
+};
+
+export const setSecondaryFilter = (filter) => {
+  return {
+    type: actionTypes.SET_SECONDARY_FILTER,
+    payload: filter,
+  };
+};
+
+
+export const clearMainFilter = () => {
+  return {
+    type: actionTypes.CLEAR_MAIN_FILTER
+  };
+};
+
+export const clearSecondaryFilter = () => {
+  return {
+    type: actionTypes.CLEAR_SECONDARY_FILTER
+  };
+};
+
+export const showChekoutModal = (bool) => {
+  return {
+    type: actionTypes.SHOW_CHECKOUT_MODAL,
+    payload: bool
+  };
+};

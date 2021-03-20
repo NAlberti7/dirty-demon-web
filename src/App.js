@@ -12,12 +12,14 @@ import MobileNav from "./components/organism/MobileNav/MobileNav";
 import Layout from "./components/atoms/Layout/Layout";
 import Footer from "./components/organism/Footer/Footer";
 import More from "./pages/More/More";
+import Media from "./pages/Media/Media";
 import Contact from "./pages/Contact/Contact";
 import Tracking from "./pages/Tracking/Tracking";
 import Cart from "./pages/Cart/Cart";
 import { AnimatePresence } from "framer-motion";
 import { connect } from "react-redux";
 import CartModal from "./components/organism/CartModal/CartModal";
+import { showCart as ShowCartAction } from "./store/actions/cartActions"
 import { useMediaQuery } from "react-responsive";
 import ReactGA from "react-ga";
 import { GAHandler } from "./utils/GA";
@@ -27,7 +29,7 @@ const Red = () => {
   return <Redirect to="/" />;
 };
 
-function App({ getItems, showCart, openNav, closeNav }) {
+function App({ getItems, showCart, openNav, closeNav, ShowCartAction }) {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const location = useLocation();
 
@@ -36,10 +38,18 @@ function App({ getItems, showCart, openNav, closeNav }) {
     GAHandler("INGRESO", "INGRESO_EXITOSO");
     getItems();
   }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     closeNav();
   }, [location.pathname]);
+
+  useEffect(() => {
+    if(!location.pathname.includes("item") && showCart){
+      ShowCartAction()
+    }
+  }, [location.pathname, showCart, ShowCartAction]);
+
 
   return (
     <div className="App">
@@ -53,6 +63,7 @@ function App({ getItems, showCart, openNav, closeNav }) {
               <Route path="/item/:id" exact component={Item} />
               <Route path="/checkout" exact component={Checkout} />
               <Route path="/more" exact component={More} />
+              {/* <Route path="/media" exact component={Media} /> */}
               <Route path="/contact" exact component={Contact} />
               {/* <Route path='/tracking' exact component={Tracking} /> */}
               <Route path="/cart" exact component={Cart} />
@@ -66,6 +77,7 @@ function App({ getItems, showCart, openNav, closeNav }) {
             <Route path="/item/:id" exact component={Item} />
             <Route path="/checkout" exact component={Checkout} />
             <Route path="/more" exact component={More} />
+            {/* <Route path="/media" exact component={Media} /> */}
             <Route path="/contact" exact component={Contact} />
             {/* <Route path='/tracking' exact component={Tracking} /> */}
             <Route path="/cart" exact component={Cart} />
@@ -75,7 +87,6 @@ function App({ getItems, showCart, openNav, closeNav }) {
       </Layout>
 
       <Footer fromHome={location.pathname === "/"} />
-      {showCart && <CartModal fromCheckout={location.pathname === "/checkout"} />}
       {isMobile && (
         <AnimatePresence exitBeforeEnter>
           {openNav && <MobileNav closeNav={closeNav} key="opennav" />}
@@ -90,4 +101,4 @@ const mapStateToProps = (state) => ({
   openNav: state.general.openNav,
 });
 
-export default connect(mapStateToProps, { getItems, closeNav })(App);
+export default connect(mapStateToProps, { getItems, closeNav, ShowCartAction })(App);

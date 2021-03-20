@@ -2,11 +2,11 @@ import React from "react";
 import Text from "../../atoms/Text/Text";
 import Dot from "../Dot/Dot";
 import styles from "./Selector.module.scss";
-const Selector = ({ data, handleSelect, title, config, selected }) => {
+const Selector = ({ data, handleSelect, title, config, selected, isLast }) => {
   const { value, id, others } = config;
   return (
-    <div className={styles.selector}>
-      <Text size={14} color='white' priority={4} primary>
+    <div className={`${styles.selector} ${isLast && styles.last}`}>
+      <Text size={14} color='white' priority={4} secondary opacity={0.5}>
         {title}
       </Text>
       <div className={styles.selector_container}>

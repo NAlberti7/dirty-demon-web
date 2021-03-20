@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setColor, setItemByColor, openSizeModal } from "../../../store/actions/generalActions";
 import { addItemCart } from "../../../store/actions/cartActions";
 import ItemNavigation from "../../molecules/ItemNavigation/ItemNavigation";
+import {ReactComponent as FrontArrow} from "../../../assets/images/FrontArrow.svg"
 import ItemInfo from "../../molecules/ItemInfo/ItemInfo";
 import Selector from "../../molecules/Selector/Selector";
 import Button from "../../molecules/Button/Button";
@@ -85,10 +86,10 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart, openSizeModal }) 
       exit="exit"
     >
       <div className={styles.itemSheet_container}>
-        <ItemNavigation title={name} isMobile={isMobile} />
-        <Text size={isMobile ? 21 : 32} primary priority={1} color="orange">
+        <ItemNavigation title={name} isMobile={isMobile} price={price}/>
+        {/* <Text size={isMobile ? 21 : 32} primary priority={1} color="orange">
           ${price}
-        </Text>
+        </Text> */}
       </div>
       {!isMobile && (
         <div className={styles.itemSheet_container}>
@@ -103,13 +104,17 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart, openSizeModal }) 
         </div>
       )}
       {!isMobile && (
-        <div
-          onClick={openSizeModal}
-          style={{ width: "100%", cursor: "pointer", paddingBottom: "10px" }}
-        >
-          <Text size={14} color="orange" priority={4} primary customStyle={styles.decor}>
-            TABLA DE TALLES
-          </Text>
+          <div className={styles.itemSheet_container}  onClick={openSizeModal}>
+            <div className={styles.size_table}>
+              <FrontArrow />
+            <Text size={14} color="white" priority={4} primary>
+              ABRIR TABLA DE TALLES
+            </Text>
+            </div>
+            {/* <Text size={14} color="white" priority={4} opacity={0.5}>
+            ALTURA DE MODELO 1,72m <br />
+            TALLE L
+            </Text> */}
         </div>
       )}
       {/* <Button handleOnClick={openSizeModal} customStyle={styles.tabla} disabled={false}>
@@ -129,17 +134,52 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart, openSizeModal }) 
           config={configColor}
           selected={selectedColor}
           handleSelect={colorHandler}
+          isLast
         />
+        {emptyStock && <div className={styles.outstock}>
+          <Text tag='p' size={14} color="white">
+          TALLE SIN STOCK
+        </Text>
+        </div>}
       </div>
-      {isMobile && <MobileItemBar isSllpper={isSllpper} />}
+      {/* {isMobile && <MobileItemBar isSllpper={isSllpper} />} */}
       <div className={`${styles.itemSheet_container} ${styles.actionButton}`}>
+      {!isMobile && <Text size={14} color="white" priority={4} >
+           PRECIO ${price}
+            </Text>}
         <Button
           disabled={!selectedSize || emptyStock}
           handleOnClick={() => addItemCart({ ...currentItem, size: selectedSize })}
         >
-          {emptyStock ? "AGOTADO" : "AÑADIR AL CARRITO"}
+        AÑADIR AL CARRITO
         </Button>
       </div>
+      {isMobile && (
+          <div className={styles.itemSheet_container}  onClick={openSizeModal}>
+            <div className={styles.size_table}>
+              <FrontArrow />
+            <Text size={14} color="white" priority={4} primary>
+              ABRIR TABLA DE TALLES
+            </Text>
+            </div>
+            {/* <Text size={14} color="white" priority={4} opacity={0.5}>
+            ALTURA DE MODELO 1,72m <br />
+            TALLE L
+            </Text> */}
+        </div>
+      )}
+      {isMobile && (
+        <div className={styles.itemSheet_container}>
+          <ItemInfo
+            color={color}
+            type={tipo}
+            isSllpper={isSllpper}
+            isNew={isNew}
+            isPants={isPants}
+            currentItem={currentItem}
+          />
+        </div>
+      )}
     </motion.div>
   );
 };

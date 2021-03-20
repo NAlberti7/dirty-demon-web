@@ -2,17 +2,24 @@
 
 .store {
   padding-top: 90px;
+  display: flex;
   @include respond(phone) {
-    padding: 90px 40px 0 40px;
+    padding: 90px 8px 0 8px;
+    flex-direction: column;
   }
   &_container {
-    width: 100%;
+    flex: 5;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding-top: 50px;
-
     min-height: 100vh;
+  }
+  .filter_container{
+    // width: 100%;
+    padding-top: 50px;
+    min-height: 100vh;
+    flex: 2;
   }
 }

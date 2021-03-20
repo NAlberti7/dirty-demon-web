@@ -3,7 +3,7 @@ import styles from "./Footer.module.scss";
 import Text from "../../atoms/Text/Text";
 
 const Footer = ({ fromHome }) => {
-  return (
+  return !fromHome && (
     <footer className={`${styles.footer} ${fromHome && styles.fromHome}`}>
       <Text size={14} tag='p' primary opacity={0.2} color='white'>
         ©2020 DIRTY DEMON™ . ALL RIGHTS RESERVED.

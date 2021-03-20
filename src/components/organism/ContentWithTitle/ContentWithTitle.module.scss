@@ -11,17 +11,28 @@
     padding: 0 34px;
   }
   &_title {
-    width: 284px;
+    // width: 284px;
+    flex: 2;
     @include respond(phone) {
       width: 100%;
     }
   }
   &_children {
-    width: 560px;
+    // width: 560px;
+    flex: 5;
 
     margin: 0 auto;
     @include respond(phone) {
       width: 100%;
     }
+  }
+}
+
+.contact{
+  p{
+    margin-top: 145px;
+  }
+  h2{
+    margin-top: 15px;
   }
 }

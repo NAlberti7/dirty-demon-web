@@ -4,9 +4,24 @@
   margin-top: 20px;
   table {
     width: 100%;
+    border-collapse: collapse;
+    border-spacing: 15px 0;
+    td{
+      padding: 15px 0;
+    }
   }
   tr {
     text-align: center;
     font-size: 14px;
+    color: white;
+  }
+  &_title{
+    border-bottom: 1px solid rgba(255,255,255,1);
+    th{
+      padding: 15px 0;
+    }
+  }
+  &_row{
+    border-bottom: 1px solid rgba(255,255,255,0.15);
   }
 }

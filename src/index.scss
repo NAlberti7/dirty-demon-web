@@ -7,7 +7,7 @@
   src: url("./assets/fonts/HelveticaNeueLTS.ttf") format("truetype"); /* Pretty Modern Browsers */
 }
 :root {
-  --main-orange: #ff5719;
+  --main-orange: #fff;
   --main-black: #000;
   --main-white: #fff;
   --main-border: #70707040;
@@ -29,6 +29,7 @@ body {
   box-sizing: border-box;
   font-family: "HelveticaLTS", sans-serif;
   background-color: var(--main-black);
+  transition: background-color 300ms ease-in-out;
 }
 
 a {

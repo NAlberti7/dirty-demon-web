@@ -26,6 +26,9 @@ const INITIAL_STATE = {
   showDetailsModal: false,
   showSizeModal: false,
   trackingResult: "",
+  mainFilter: "",
+  secondaryFilter: "",
+  showCheckoutModal: false
 };
 
 const changeCurrentItemByColor = (state, _id, color) => {
@@ -262,6 +265,35 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         trackingResult: action.payload,
       };
+      case actionTypes.SET_MAIN_FILTER:
+        return {
+          ...state,
+          mainFilter: action.payload,
+        };
+        case actionTypes.SET_SECONDARY_FILTER:
+          return {
+            ...state,
+            secondaryFilter: action.payload,
+          };
+          case actionTypes.CLEAR_MAIN_FILTER:
+            return {
+              ...state,
+              mainFilter: "",
+            };
+
+            case actionTypes.CLEAR_SECONDARY_FILTER:
+              return {
+                ...state,
+                secondaryFilter: "",
+              };
+
+
+              case actionTypes.SHOW_CHECKOUT_MODAL:
+                return {
+                  ...state,
+                  showCheckoutModal: action.payload,
+                };
+      
     default:
       return state;
   }

@@ -36,12 +36,7 @@ const ItemContainer = ({
   };
 
   return (
-    <div className={`${styles.itemContainer} ${isHoodie || isPants ? styles.hoodie : ""}`}>
-      <Text size={15} priority={5} primary opacity={0.3} customStyle={styles.itemContainer_title}>
-        {season}
-      </Text>
-      {isOpen && (
-        // <motion.section variant={variants} transition={transition} initial='collapsed' animate='open' exit='collapsed' className={styles.itemContainer_items}>
+    <div className={`${styles.itemContainer}`}>
         <motion.section
           className={styles.itemContainer_items}
           initial='initial'
@@ -51,10 +46,9 @@ const ItemContainer = ({
         >
           {data &&
             data.map((item) => (
-              <Item item={item} handleClick={handleClick} isOldHoodie={isOldHoodie} />
+              <Item item={item} handleClick={handleClick} isOldHoodie={isOldHoodie} isOpen={isOpen} />
             ))}
         </motion.section>
-      )}
     </div>
   );
 };

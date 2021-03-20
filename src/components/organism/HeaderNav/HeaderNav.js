@@ -8,8 +8,11 @@ import { useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { openNav as setOpenNav, closeNav } from "../../../store/actions/generalActions";
+import CartNotification from "../CartNotification/CartNotification"
+
 import { OPEN_NAV } from "../../../store/actions/types";
-const HeaderNav = ({ isShopHover, cartItems, openNav, closeNav, setOpenNav }) => {
+
+const HeaderNav = ({ isShopHover, cartItems, openNav, closeNav, setOpenNav, showCart, mainFilter }) => {
   const location = useLocation();
   const fromHome = location.pathname === "/";
   const [scroll, setScroll] = useState(false);
@@ -36,9 +39,10 @@ const HeaderNav = ({ isShopHover, cartItems, openNav, closeNav, setOpenNav }) =>
     >
       <div className={`${styles.headerNav_container} ${fromHome && styles.fromHome}`}>
         {isMobile && <BurgerMenu onClick={navHandler} isOpen={openNav} />}
-        <Season fromHome={fromHome} isMobile={isMobile} />
+        <Season fromHome={fromHome} isMobile={isMobile} mainFilter={mainFilter} />
         {!isMobile && <MainHeaderContent fromHome={fromHome} isShopHover={isShopHover} />}
         <Cart fromHome={fromHome} isMobile={isMobile} hasCartItems={cartItems.length} />
+        {showCart && <CartNotification />}
       </div>
     </nav>
   );
@@ -48,6 +52,8 @@ const mapStateToProps = (state) => ({
   isShopHover: state.general.isShopHover,
   cartItems: state.general.cartItems,
   openNav: state.general.openNav,
+  showCart: state.general.showCart,
+  mainFilter: state.general.mainFilter
 });
 
 export default connect(mapStateToProps, { setOpenNav, closeNav })(HeaderNav);

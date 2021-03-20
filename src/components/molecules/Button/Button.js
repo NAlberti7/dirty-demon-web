@@ -13,7 +13,7 @@ const Button = ({
 }) => {
   let color;
   if (isSecondary) color = "white";
-  else if (disabled) color = "orange";
+  else if (disabled) color = "white";
   else color = "black";
   return (
     <button
@@ -22,7 +22,7 @@ const Button = ({
       disabled={disabled}
       type={type}
     >
-      <Text primary tag='span' size={15} color={color}>
+      <Text tag='span' size={14} color={color} primary>
         {children}
       </Text>
     </button>

@@ -70,9 +70,6 @@ const ContactForm = ({ postSendMail, mailMessage, setMailingResult }) => {
         <Button type='submit' disabled={hasSubmit}>
           ENVIAR CONSULTA
         </Button>
-        <Text tag='p' size={14} weight='semibold' align='left' color='white' opacity={0.2}>
-          TIEMPO APROXIMADO DE RESPUESTA 2 HRS.
-        </Text>
       </Form>
     </div>
   );

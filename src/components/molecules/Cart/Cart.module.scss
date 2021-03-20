@@ -4,20 +4,14 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: var(--main-orange);
   position: relative;
-  width: 43px;
-  height: 45px;
   opacity: 1;
   position: absolute;
   right: 0;
   bottom: 20px;
   &.hasCartItems {
-    svg {
-      transition: all 200ms ease-in-out;
-      * {
-        fill: var(--main-orange);
-      }
+    span{
+      color: "white";
     }
   }
   @include respond(desktop) {

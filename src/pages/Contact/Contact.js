@@ -44,16 +44,7 @@ const Contact = () => {
       variants={pageVariants}
       className={styles.contact}
     >
-      <ContentWithTitle title='CONTACT'>
-        <Text tag='h2' size={14} align='left' color='white' primary>
-          RECOMENDAMOS CONSULTAR EL SECTOR DE <span>“FAQS“</span> (PREGUNTAS FRECUENTES) ANTES DE
-          ENVIAR SU DUDA.
-        </Text>
-        <Text tag='h2' size={14} align='left' color='white' primary>
-          POR SEGUIMIENTO O TRACKING DE SU PEDIDO CONSULTAR EL SECTOR DE <span>“TRACKING”</span> Y
-          CARGAR EL CODIGO ENVIADO A SU CASILLA DE E-MAIL.
-        </Text>
-
+      <ContentWithTitle title='CONTACT' fromContact>
         <Text tag='div' size={17} align='left' color='black' primary customStyle={styles.datos}>
           DATOS DE CONTACTO
         </Text>

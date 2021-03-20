@@ -19,10 +19,19 @@
     display: flex;
     align-items: center;
     justify-items: center;
+    flex: 5;
   }
   &_left {
     // height: 100%;
-    margin-right: 161px;
+    flex: 2;
+    &Footer{
+      display: flex;
+      align-items: center;
+      margin-top: 27px;
+      h5{
+        margin-right: 32px;
+      }
+    }
     @include respond(phone) {
       margin-right: 0;
       padding-left: 34px;
@@ -51,4 +60,8 @@
   h4 {
     margin-bottom: 18px;
   }
+}
+
+.iva{
+  margin-top: 27px;
 }

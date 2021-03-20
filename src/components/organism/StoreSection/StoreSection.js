@@ -11,30 +11,13 @@ const StoreSection = ({
   isHoodie,
   isPants,
   newCollection,
+  isBasics,
 }) => {
   const [isOpen, isOpenHandler] = useState(defaultOpen);
-  data = !newCollection
-    ? data.filter((item) => !item.tags.find((el) => el == "collection 3"))
-    : data;
-
-  let newHoodies;
-  let oldHoodies;
-
-  if (isHoodie) {
-    newHoodies = data.filter((item) => item.tags.find((tag) => tag === "drop2"));
-    oldHoodies = data.filter((item) => !item.tags.find((tag) => tag === "drop2"));
-  }
-
   return (
     <section className={styles.storeSection}>
-      <StoreDrop isOpen={isOpen} isOpenHandler={isOpenHandler} title={title} />
-      {!isHoodie && <ItemContainer isOpen={isOpen} data={data} season={season} isPants={isPants} />}
-      {isHoodie && (
-        <div className={styles.storeSection_hoodies}>
-          <ItemContainer isOpen={isOpen} data={newHoodies} season={"DROP 2 / FW2020"} isHoodie />
-          <ItemContainer isOpen={isOpen} data={oldHoodies} season={season} isHoodie isOldHoodie />
-        </div>
-      )}
+     <StoreDrop isOpen={isOpen} isOpenHandler={isOpenHandler} title={title} isBasics={isBasics}/>
+     <ItemContainer isOpen={isOpen} data={data} season={season} isPants={isPants} />
     </section>
   );
 };

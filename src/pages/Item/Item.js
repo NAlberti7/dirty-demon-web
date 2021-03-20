@@ -9,9 +9,11 @@ import Text from "../../components/atoms/Text/Text";
 import StoreSection from "../../components/organism/StoreSection/StoreSection";
 import ModalPreview from "../../components/organism/ModalPreview/ModalPreview";
 import DetailsMobile from "../../components/organism/DetailsMobile/DetailsMobile";
+import ShowcaseCarousel from "../../components/organism/ShowCaseCarousel/index";
 import SizeMobile from "../../components/organism/SizesMobile/SizesMobile";
 import Slider from "../../components/organism/Slider/Slider";
 import Look1 from "../../assets/images/Look-1.png";
+import CartNotification from "../../components/organism/CartNotification/CartNotification";
 import Look2 from "../../assets/images/look-2.png";
 import { getItem } from "../../store/actions/generalActions";
 import { useMediaQuery } from "react-responsive";
@@ -73,7 +75,7 @@ const Item = ({
   history,
   getItem,
   showDetailsModal,
-  showSizeModal,
+  showSizeModal
 }) => {
   const recommendData =
     currentItem &&
@@ -104,26 +106,13 @@ const Item = ({
                 <>
                   <ItemSheet currentItem={currentItem} key="itemsheet" />
                   {isMobile ? (
-                    <Slider currentItem={currentItem} />
+                    <Slider currentItem={currentItem} isMobile={isMobile}/>
                   ) : (
-                    <ItemShowCase
-                      item={currentItem}
-                      fromShowcase
-                      key="itemshowcae"
-                      config={{ initial: "exit", animate: "enter", exit: "exit" }}
-                    />
+                    <ShowcaseCarousel currentItem={currentItem}/>
                   )}
                 </>
               )}
             </AnimatePresence>
-            {!isMobile && (
-              <PreviewContainer
-                previewImages={currentItem.preview}
-                currentItem={currentItem}
-                isPreviewActive={isPreviewActive}
-                setPreviewActive={setPreviewActive}
-              />
-            )}
           </motion.div>
         ) : null}
         {!isMobile && (
@@ -134,12 +123,15 @@ const Item = ({
             exit="out"
             animate="in"
           >
-            <Text priority={2} primary size={42}>
-              RECOMENDADO PARA TI
+            <Text priority={2} tag="div" size={42} className={styles.item_recommend_title} color="white">
+              RECOMENDADO
             </Text>
+            <div className={styles.item_recommend_data}>
             {recommendData && (
               <StoreSection data={recommendData} title="T-SHIRTS" season="DROP 1 / SS2020" />
             )}
+              
+            </div>
           </motion.div>
         )}
       </motion.main>
@@ -157,7 +149,6 @@ const Item = ({
           </AnimatePresence>
         </>
       )}
-      {showPreviewModal && <ModalPreview />}
     </>
   );
 };
@@ -167,7 +158,7 @@ const mapStateToProps = (state) => ({
   itemList: state.general.itemList,
   showPreviewModal: state.general.showPreviewModal,
   showDetailsModal: state.general.showDetailsModal,
-  showSizeModal: state.general.showSizeModal,
+  showSizeModal: state.general.showSizeModal
 });
 
 export default connect(mapStateToProps, { getItem })(Item);

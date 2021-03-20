@@ -1,5 +1,5 @@
 .shippingCard {
-  padding: 14px 0 14px 18px;
+  padding: 14px 18px 14px 18px;
   width: 100%;
   max-width: 582px;
   border: 1px solid rgba($color: #ffff, $alpha: 0.4);
@@ -7,7 +7,7 @@
   transition: all 200ms ease-in-out;
   margin-bottom: 18px;
   &.selected {
-    border-color: var(--main-orange);
+    border-color: var(--main-white);
   }
   h2 {
     margin-bottom: 10px;

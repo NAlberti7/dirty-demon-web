@@ -1,11 +1,19 @@
 @import "../../../utils/media.scss";
 .item {
-  width: 215px;
-  height: 316px;
+  width: 187px;
+  height: 232px;
   position: relative;
+  background-color: #ffffff;
+  transition: all 300ms ease-in-out;
+  margin-right: 10px;
+  margin-top: 10px;
+  &.isClosed{
+    width: 82px;
+    height: 102px;
+  }
   @include respond(phone) {
-    width: 285px;
-    height: 400px;
+    width: 155px;
+    height: 193px;
   }
   cursor: pointer;
   img {
@@ -28,7 +36,8 @@
   transform: translate(-50%, -50%);
   width: 90px;
   height: 28px;
-  background: var(--main-orange);
+  background: var(--main-black);
+  border: 1px solid var(--main-white);
   display: flex;
   align-items: center;
   justify-content: center;

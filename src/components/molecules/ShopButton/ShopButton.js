@@ -5,7 +5,7 @@ import Text from "../../atoms/Text/Text";
 const ShopButton = () => {
   return (
     <Link className={styles.shopButton} to='/store'>
-      <Text size={17} color='orange' tag='span' primary>
+      <Text size={18} color='white' tag='span' primary>
         SHOP
       </Text>
     </Link>

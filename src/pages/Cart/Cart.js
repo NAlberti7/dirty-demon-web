@@ -57,8 +57,7 @@ const Cart = ({ cartItems, totalPrice = "", calculatePrice }) => {
       <div className={styles.cart_left}>
         <div className={styles.cart_title}>
           <Text priority={1} primary size={isMobile ? 40 : 72} color='white' align='left'>
-            CART <br />
-            {!isMobile ? `ITEMS (${cartItems.length})` : ""}
+            CART
           </Text>
           {isMobile && (
             <Text priority={1} primary size={18} color='white' align='left'>
@@ -67,12 +66,23 @@ const Cart = ({ cartItems, totalPrice = "", calculatePrice }) => {
           )}
         </div>
         {!isMobile && (
-          <>
-            <Text priority={1} primary size={22} color='white' align='left'>
+          <div>
+            <Text priority={3} size={14} color='white' align='left' opacity={0.5}>
+              {cartItems.length} ARTICULOS
+            </Text>
+            <Text priority={3} size={14} color='white' align='left' opacity={0.5}>
+              PRECIO: ${totalPrice}
+            </Text>
+            <Text priority={3} size={14} color='white' align='left' opacity={0.5} customStyle={styles.iva}>
+            IVA(*) INCLUIDO
+            </Text>
+          <div className={styles.cart_leftFooter}>
+            <Text priority={5} primary size={14} color='white' align='left'>
               TOTAL ${totalPrice}
             </Text>
             <Button handleOnClick={() => history.push("/checkout")}>PROCESO DE PAGO</Button>{" "}
-          </>
+          </div>
+          </div>
         )}
       </div>
       {isMobile ? (
