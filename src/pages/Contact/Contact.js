@@ -38,14 +38,14 @@ const pageVariants = {
 const Contact = () => {
   return (
     <motion.main
-      initial='initial'
-      animate='in'
-      exit='out'
+      initial="initial"
+      animate="in"
+      exit="out"
       variants={pageVariants}
       className={styles.contact}
     >
-      <ContentWithTitle title='CONTACT' fromContact>
-        <Text tag='div' size={17} align='left' color='black' primary customStyle={styles.datos}>
+      <ContentWithTitle title="CONTACT" fromContact>
+        <Text tag="div" size={17} align="left" color="white" primary customStyle={styles.datos}>
           DATOS DE CONTACTO
         </Text>
         <ContactForm />

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setColor, setItemByColor, openSizeModal } from "../../../store/actions/generalActions";
 import { addItemCart } from "../../../store/actions/cartActions";
 import ItemNavigation from "../../molecules/ItemNavigation/ItemNavigation";
-import {ReactComponent as FrontArrow} from "../../../assets/images/FrontArrow.svg"
+import { ReactComponent as FrontArrow } from "../../../assets/images/FrontArrow.svg";
 import ItemInfo from "../../molecules/ItemInfo/ItemInfo";
 import Selector from "../../molecules/Selector/Selector";
 import Button from "../../molecules/Button/Button";
@@ -36,7 +36,8 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart, openSizeModal }) 
   const [selectedColor, setSelectedColor] = useState("");
   const [emptyStock, setEmptyStock] = useState(false);
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  let { color, stock, name, price, colors, tags } = currentItem;
+  let { color, stock, name, price, colors, tags, model } = currentItem;
+  const { size, height } = model;
 
   let isShirt = tags[0] === "remera";
   let isHoodie = tags[0] === "buzo";
@@ -86,7 +87,7 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart, openSizeModal }) 
       exit="exit"
     >
       <div className={styles.itemSheet_container}>
-        <ItemNavigation title={name} isMobile={isMobile} price={price}/>
+        <ItemNavigation title={name} isMobile={isMobile} price={price} />
         {/* <Text size={isMobile ? 21 : 32} primary priority={1} color="orange">
           ${price}
         </Text> */}
@@ -104,17 +105,19 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart, openSizeModal }) 
         </div>
       )}
       {!isMobile && (
-          <div className={styles.itemSheet_container}  onClick={openSizeModal}>
-            <div className={styles.size_table}>
-              <FrontArrow />
+        <div className={styles.itemSheet_container} onClick={openSizeModal}>
+          <div className={styles.size_table}>
+            <FrontArrow />
             <Text size={14} color="white" priority={4} primary>
               ABRIR TABLA DE TALLES
             </Text>
-            </div>
-            {/* <Text size={14} color="white" priority={4} opacity={0.5}>
-            ALTURA DE MODELO 1,72m <br />
-            TALLE L
-            </Text> */}
+          </div>
+          {size && height && (
+            <Text size={14} color="white" priority={4} opacity={0.5}>
+              ALTURA DE MODELO {height} <br />
+              TALLE {size}
+            </Text>
+          )}
         </div>
       )}
       {/* <Button handleOnClick={openSizeModal} customStyle={styles.tabla} disabled={false}>
@@ -136,36 +139,42 @@ const ItemSheet = ({ currentItem, setItemByColor, addItemCart, openSizeModal }) 
           handleSelect={colorHandler}
           isLast
         />
-        {emptyStock && <div className={styles.outstock}>
-          <Text tag='p' size={14} color="white">
-          TALLE SIN STOCK
-        </Text>
-        </div>}
+        {emptyStock && (
+          <div className={styles.outstock}>
+            <Text tag="p" size={14} color="white">
+              TALLE SIN STOCK
+            </Text>
+          </div>
+        )}
       </div>
       {/* {isMobile && <MobileItemBar isSllpper={isSllpper} />} */}
       <div className={`${styles.itemSheet_container} ${styles.actionButton}`}>
-      {!isMobile && <Text size={14} color="white" priority={4} >
-           PRECIO ${price}
-            </Text>}
+        {!isMobile && (
+          <Text size={14} color="white" priority={4}>
+            PRECIO ${price}
+          </Text>
+        )}
         <Button
           disabled={!selectedSize || emptyStock}
           handleOnClick={() => addItemCart({ ...currentItem, size: selectedSize })}
         >
-        AÑADIR AL CARRITO
+          AÑADIR AL CARRITO
         </Button>
       </div>
       {isMobile && (
-          <div className={styles.itemSheet_container}  onClick={openSizeModal}>
-            <div className={styles.size_table}>
-              <FrontArrow />
+        <div className={styles.itemSheet_container} onClick={openSizeModal}>
+          <div className={styles.size_table}>
+            <FrontArrow />
             <Text size={14} color="white" priority={4} primary>
               ABRIR TABLA DE TALLES
             </Text>
-            </div>
-            {/* <Text size={14} color="white" priority={4} opacity={0.5}>
-            ALTURA DE MODELO 1,72m <br />
-            TALLE L
-            </Text> */}
+          </div>
+          {size && height && (
+            <Text size={14} color="white" priority={4} opacity={0.5}>
+              ALTURA DE MODELO {height} <br />
+              TALLE {size}
+            </Text>
+          )}
         </div>
       )}
       {isMobile && (

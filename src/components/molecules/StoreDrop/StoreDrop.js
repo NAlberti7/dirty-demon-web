@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./StoreDrop.module.scss";
-import {ReactComponent as CloseArrow } from "../../../assets/images/CloseArrow.svg"
+import { ReactComponent as CloseArrow } from "../../../assets/images/CloseArrow.svg";
 import Text from "../../atoms/Text/Text";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
@@ -14,7 +14,7 @@ const variants = {
   },
 };
 
-const StoreDrop = ({ isOpen, isOpenHandler, title = "", isBasics }) => {
+const StoreDrop = ({ isOpen, isOpenHandler, title = "", isBasics, type }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <div className={styles.storeDrop}>
@@ -23,7 +23,7 @@ const StoreDrop = ({ isOpen, isOpenHandler, title = "", isBasics }) => {
           {title}
         </Text>
         <Text size={14} priority={4} opacity={0.5}>
-        &nbsp; OVERSIZE
+          &nbsp; {type ? type : "OVERSIZE"}
         </Text>
       </div>
       {!isMobile && (

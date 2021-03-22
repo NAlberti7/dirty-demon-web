@@ -7,10 +7,35 @@
   justify-content: center;
   flex-direction: column;
   padding: 36px 0;
+  &_container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: 10px;
+    }
+    &Left {
+      flex: 2;
+      @include respond(phone) {
+        flex: none;
+      }
+    }
+    &Right {
+      flex: 5;
+      @include respond(phone) {
+        flex: none;
+        margin-top: 17px;
+      }
+    }
+  }
   &.fromHome {
-    position: absolute;
-    bottom: 87px;
-    padding: 0;
+    display: none;
     @include respond(phone) {
       display: none;
     }

@@ -1,0 +1,149 @@
+@import "../../utils/media.scss";
+.item {
+  padding-top: 200px;
+  width: 100%;
+  min-height: 100vh;
+  @include respond(phone) {
+    padding-top: 80px;
+  }
+  &_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    // padding-bottom: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    min-height: 586px;
+    padding-bottom: 75px;
+    @include respond(phone) {
+      flex-direction: column-reverse;
+      width: 100%;
+      border-bottom: none;
+    }
+  }
+  &_recommend {
+    width: 100%;
+    padding-top: 15px;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    &_title {
+      color: white;
+      flex: 2;
+    }
+    &_data {
+      flex: 5;
+    }
+  }
+  .actionButton {
+    @include respond(phone) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.showCaseCarousel {
+  width: 100%;
+  //   max-width: var(--max-width-extra);
+  // height: 454.50px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 100;
+  &_section {
+    width: 100%;
+    @include respond(phone) {
+      padding-top: 20px;
+    }
+  }
+  &_container {
+    width: fit-content;
+    display: flex;
+  }
+}
+.title {
+  margin-bottom: 46px;
+}
+
+.sliderItem {
+  width: 454.5px;
+  height: 561px;
+  justify-content: flex-end;
+  position: relative;
+  margin-right: 10px;
+  background: var(--main-white);
+  &.last {
+    margin-right: 350px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 300ms ease-in-out;
+    z-index: -2;
+    pointer-events: none;
+  }
+  @include respond(phone) {
+    width: 383px;
+    height: 471px;
+  }
+}
+
+.item_info {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-right: 19%;
+  width: 100%;
+  min-height: 586px;
+  @include respond(phone) {
+    min-height: auto;
+    margin-top: 10px;
+  }
+}
+
+.mediaInfo_item {
+  margin-bottom: 21px;
+  @include respond(phone) {
+    margin-bottom: 20px;
+  }
+}
+
+.itemNavigation {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &_item {
+    width: 100%;
+    height: 41px;
+    padding-right: 5px;
+    padding-left: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: auto;
+    @include respond(phone) {
+      height: auto;
+      margin-bottom: 20px;
+    }
+    h1 {
+      text-align: left;
+    }
+    &.arrow {
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .spacing {
+      margin-left: 6px;
+    }
+  }
+}

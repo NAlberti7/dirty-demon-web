@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import ContentWithTitle from "../../components/organism/ContentWithTitle/ContentWithTitle";
 import Text from "../../components/atoms/Text/Text";
 import Icon from "../../components/atoms/Icon/Icon";
+import MediaDrop from "../../components/organism/MediaDrop";
+import { MEDIA_1, MEDIA_2, MEDIA_3, MEDIA_4 } from "./constants";
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -46,7 +48,11 @@ const Media = () => {
       <article className={styles.more_article}>
         <ContentWithTitle title="MEDIA">
           <div className={styles.question}>
-           </div>
+            <MediaDrop data={MEDIA_3} />
+            <MediaDrop data={MEDIA_1} />
+            <MediaDrop data={MEDIA_2} />
+            <MediaDrop data={MEDIA_4} />
+          </div>
         </ContentWithTitle>
       </article>
     </motion.main>

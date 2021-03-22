@@ -16,17 +16,19 @@ const variants = {
 };
 const MainHeaderContent = ({ fromHome, isShopHover, setShopHover, dismissShopHover, isMobile }) => {
   return (
-    <div className={`${styles.mainHeaderContent} ${fromHome ? styles.fromHome : styles.notfromhome}`}>
+    <div
+      className={`${styles.mainHeaderContent} ${fromHome ? styles.fromHome : styles.notfromhome}`}
+    >
       <div className={styles.mainHeaderContent_container}>
         {!fromHome && (
           <NavLink path="/store" fromHome={fromHome}>
             SHOP
           </NavLink>
         )}
-        {/* <NavLink path="/media" fromHome={fromHome}>
+        <NavLink path="/media" fromHome={fromHome}>
           MEDIA
-        </NavLink> */}
-        <NavLink path='/contact' fromHome={fromHome}>
+        </NavLink>
+        <NavLink path="/contact" fromHome={fromHome}>
           CONTACT
         </NavLink>
         <NavLink path="/more" fromHome={fromHome}>
